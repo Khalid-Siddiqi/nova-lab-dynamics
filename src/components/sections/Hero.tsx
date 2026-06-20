@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { MagneticButton } from "./MagneticButton";
-import { Counter } from "./Counter";
+import { MagneticButton } from "../MagneticButton";
+import { Counter } from "../Counter";
 
 export function Hero() {
   const wrapRef = useRef<HTMLDivElement>(null);
