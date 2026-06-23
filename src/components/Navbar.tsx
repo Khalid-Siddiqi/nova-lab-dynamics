@@ -3,10 +3,9 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { id: "home", label: "Home" },
+  { id: "ongoing", label: "Active Collaborations" },
   { id: "approach", label: "Approach" },
   { id: "research", label: "Latest Research" },
-  { id: "ongoing", label: "Ongoing Work" },
-  { id: "upcoming", label: "Upcoming" },
   { id: "team", label: "Team" },
   { id: "expertise", label: "Expertise" },
   { id: "contact", label: "Contact" },

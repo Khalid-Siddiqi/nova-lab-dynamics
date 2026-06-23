@@ -6,7 +6,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Approach } from "@/components/sections/Approach";
 import { Publications } from "@/components/sections/Publications";
 import { Collaborations } from "@/components/sections/Collaborations";
-import { Upcoming } from "@/components/sections/Upcoming";
 import { Team } from "@/components/sections/Team";
 import { ResearchAreas } from "@/components/sections/ResearchAreas";
 import { Contact } from "@/components/sections/Contact";
@@ -44,10 +43,9 @@ function Index() {
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <Collaborations />
       <Approach />
       <Publications />
-      <Collaborations />
-      <Upcoming />
       <Team />
       <ResearchAreas />
       <Contact />

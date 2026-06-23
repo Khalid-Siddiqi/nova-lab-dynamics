@@ -1,44 +1,53 @@
-import { ChevronDown, Building2, Stethoscope } from "lucide-react";
-import { useState } from "react";
+import { Building2, Stethoscope, CheckCircle2, Target, Microscope, Users } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { TiltCard } from "../TiltCard";
 
 const collabs = [
   {
     code: "IDEC",
-    org: "Indus",
-    title: "Diabetic Foot Ulcer & Diabetes Care",
-    partner: "Indus Diabetes and Endocrinology Centre (IDEC), Indus Hospital, Karachi, Pakistan",
-    lead: "Prof. Dr. Abdul Basit",
-    desc: "AI-driven analysis of diabetic foot ulcers, longitudinal patient data, and decision-support tools for diabetes management.",
+    org: "Indus Hospital",
+    title: "AI-based Diabetic Foot Ulcer Prognosis",
+    partner: "Indus Diabetes and Endocrinology Centre (IDEC), Indus Hospital, Karachi",
+    tagline: "Predicting healing trajectories before complications escalate.",
     icon: Stethoscope,
-    details: [
-      "Multi-stage DFU detection pipeline",
-      "Longitudinal patient cohort modeling",
-      "Clinician-in-the-loop validation",
+    accent: "from-royal to-electric",
+    focus: [
+      "Multi-stage DFU detection & severity grading pipeline",
+      "Prognostic modeling of healing vs. amputation risk",
+      "Longitudinal patient cohort tracking & outcome prediction",
+      "Clinician-in-the-loop validation at point of care",
+    ],
+    impact: [
+      { icon: Target, label: "Goal", text: "Reduce diabetic amputations through earlier, data-driven intervention." },
+      { icon: Microscope, label: "Approach", text: "Vision transformers on serial wound imagery paired with structured clinical metadata." },
+      { icon: Users, label: "Scope", text: "Built with and for endocrinologists and podiatrists treating thousands of diabetic patients." },
     ],
   },
   {
     code: "AKU",
-    org: "Hospital",
-    title: "Brain Cancer Diagnostics & Research",
+    org: "Aga Khan University Hospital",
+    title: "Brain Cancer Diagnostics",
     partner: "Aga Khan University Hospital (AKU), Karachi",
-    lead: "Dr. Ather Enam",
-    desc: "Deep learning and medical imaging for brain cancer detection, classification, and treatment planning.",
+    tagline: "Sharper, faster, more confident neuro-oncology decisions.",
     icon: Building2,
-    details: [
-      "MRI-based tumor segmentation",
-      "Multi-class classification of gliomas",
-      "Pre-operative planning support",
+    accent: "from-electric to-cyan-soft",
+    focus: [
+      "MRI-based brain tumor segmentation across modalities",
+      "Multi-class classification of gliomas and metastatic lesions",
+      "Pre-operative planning support for neurosurgical teams",
+      "Radiomic biomarkers for treatment response monitoring",
+    ],
+    impact: [
+      { icon: Target, label: "Goal", text: "Cut time-to-diagnosis and elevate diagnostic confidence in complex brain tumor cases." },
+      { icon: Microscope, label: "Approach", text: "3D deep learning on multi-sequence MRI with explainable, clinician-readable outputs." },
+      { icon: Users, label: "Scope", text: "Embedded with neurosurgery and radiology teams at one of South Asia's leading hospitals." },
     ],
   },
 ];
 
 export function Collaborations() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
-    <section id="ongoing" className="relative py-28">
+    <section id="ongoing" className="relative py-28" style={{ background: "var(--gradient-section)" }}>
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-electric">
@@ -52,67 +61,78 @@ export function Collaborations() {
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Two major clinical partnerships currently driving our research forward.
+            Two flagship clinical partnerships currently driving our research — each embedded
+            inside real hospital workflows, solving problems that matter at the bedside.
           </p>
         </Reveal>
 
-        {/* connecting line decoration on lg */}
-        <div className="relative mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-px w-24 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-electric via-cyan-soft to-electric md:block" />
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {collabs.map((c, i) => {
             const Icon = c.icon;
-            const isOpen = open === i;
             return (
               <Reveal key={c.code} delay={i * 120}>
-                <TiltCard intensity={6}>
-                  <div className="group relative overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:shadow-elevate">
+                <TiltCard intensity={5}>
+                  <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:shadow-elevate md:p-10">
                     <div className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-br from-electric/0 via-electric/30 to-cyan-soft/0 opacity-0 blur-md transition group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-electric/15 blur-3xl opacity-0 transition duration-700 group-hover:opacity-100" />
+
                     <div className="relative">
-                      <div className="flex items-center gap-4">
-                        <div className="relative">
+                      <div className="flex items-start gap-5">
+                        <div className="relative shrink-0">
                           <div className="absolute inset-0 rounded-2xl bg-electric/30 blur-lg opacity-0 transition group-hover:opacity-100" />
-                          <div className="relative grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-royal to-electric text-white shadow-glow">
-                            <Icon size={26} />
+                          <div className={`relative grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br ${c.accent} text-white shadow-glow`}>
+                            <Icon size={34} />
                           </div>
                         </div>
-                        <div>
-                          <div className="font-display text-sm font-bold text-foreground">{c.code}</div>
-                          <div className="text-xs text-muted-foreground">{c.org}</div>
-                        </div>
-                        <div className="ml-auto flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">
-                          <span className="relative grid h-2 w-2 place-items-center">
-                            <span className="absolute h-2 w-2 rounded-full bg-emerald-500 animate-pulse-ring" />
-                            <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
-                          </span>
-                          Active
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="font-display text-base font-bold text-foreground">{c.code}</span>
+                            <span className="text-xs text-muted-foreground">· {c.org}</span>
+                            <span className="ml-auto inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-600">
+                              <span className="relative grid h-2 w-2 place-items-center">
+                                <span className="absolute h-2 w-2 rounded-full bg-emerald-500 animate-pulse-ring" />
+                                <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
+                              </span>
+                              Active
+                            </span>
+                          </div>
+                          <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-foreground md:text-[1.7rem]">
+                            {c.title}
+                          </h3>
+                          <p className="mt-2 text-sm font-semibold text-royal">{c.partner}</p>
+                          <p className="mt-3 text-base italic leading-relaxed text-foreground/80">
+                            “{c.tagline}”
+                          </p>
                         </div>
                       </div>
 
-                      <h3 className="mt-6 font-display text-xl font-bold text-foreground">{c.title}</h3>
-                      <p className="mt-2 text-sm font-semibold text-royal">Partner: <span className="text-foreground/80 font-normal">{c.partner}</span></p>
-                      <p className="mt-1 text-xs text-muted-foreground">Lead Clinician: {c.lead}</p>
-                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+                      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                        {c.impact.map((b) => {
+                          const BIcon = b.icon;
+                          return (
+                            <div key={b.label} className="rounded-2xl border border-border bg-secondary/50 p-4">
+                              <div className="flex items-center gap-2 text-electric">
+                                <BIcon size={16} />
+                                <span className="text-[11px] font-bold uppercase tracking-wider">{b.label}</span>
+                              </div>
+                              <p className="mt-2 text-xs leading-relaxed text-foreground/80">{b.text}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
 
-                      <button
-                        onClick={() => setOpen(isOpen ? null : i)}
-                        data-cursor="hover"
-                        className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-electric"
-                      >
-                        {isOpen ? "Hide details" : "View details"}
-                        <ChevronDown size={14} className={`transition ${isOpen ? "rotate-180" : ""}`} />
-                      </button>
-
-                      <div className={`grid transition-all duration-500 ${isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                        <div className="overflow-hidden">
-                          <ul className="space-y-2 rounded-xl border border-border bg-secondary/50 p-4">
-                            {c.details.map((d) => (
-                              <li key={d} className="flex items-center gap-2 text-sm text-foreground/85">
-                                <span className="h-1.5 w-1.5 rounded-full bg-electric" />
-                                {d}
-                              </li>
-                            ))}
-                          </ul>
+                      <div className="mt-8">
+                        <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                          What we are building
                         </div>
+                        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                          {c.focus.map((d) => (
+                            <li key={d} className="flex items-start gap-2.5 text-sm text-foreground/85">
+                              <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-electric" />
+                              <span className="leading-relaxed">{d}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>

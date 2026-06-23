@@ -6,7 +6,7 @@ import { Reveal } from "../Reveal";
 import { TiltCard } from "../TiltCard";
 
 const areas = [
-  { i: Activity, t: "Diabetic Foot Ulcer Detection & Staging", d: "Deep learning pipelines for automated DFU detection and stage classification using clinical imaging data.", feat: true },
+  { i: Activity, t: "AI-based Diabetic Foot Ulcer Prognosis", d: "Deep learning pipelines for prognosis, detection, and stage classification of diabetic foot ulcers using clinical imaging data.", feat: true },
   { i: Pill,     t: "Cancer Drug Response Prediction",          d: "Matrix factorization, ensemble methods, and deep learning techniques to predict antineoplastic drug responses in oncology." },
   { i: Camera,   t: "Medical Imaging & Diagnostics",            d: "Computer vision and deep learning for brain cancer detection, classification, and treatment planning.", feat: true },
   { i: Dna,      t: "Bioinformatics & Disease Gene Discovery",  d: "Discovering disease genes in PPI networks using centrality and community detection approaches." },
