@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { MagneticButton } from "../MagneticButton";
-import { Counter } from "../Counter";
+
 
 export function Hero() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -97,22 +97,6 @@ export function Hero() {
           </MagneticButton>
         </div>
 
-        {/* Stats strip */}
-        <div className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: "0.55s" }}>
-          {[
-            { v: 20, s: "+", l: "Years of Research" },
-            { v: 4, s: "", l: "Active Projects" },
-            { v: 6, s: "", l: "Clinical Partners" },
-            { v: 9, s: "+", l: "Research Areas" },
-          ].map((s) => (
-            <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-              <div className="font-display text-3xl font-bold text-white">
-                <Counter to={s.v} suffix={s.s} />
-              </div>
-              <div className="mt-1 text-[11px] uppercase tracking-wider text-white/60">{s.l}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Bottom gradient */}
