@@ -1,46 +1,48 @@
-import { Building2, Stethoscope, CheckCircle2, Target, Microscope, Users } from "lucide-react";
+import { CheckCircle2, Target, Microscope, Users } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { TiltCard } from "../TiltCard";
 
 const collabs = [
   {
     code: "IDEC",
-    org: "Indus Hospital",
-    title: "AI-based Diabetic Foot Ulcer Prognosis",
-    partner: "Indus Diabetes and Endocrinology Centre (IDEC), Indus Hospital, Karachi",
-    tagline: "Predicting healing trajectories before complications escalate.",
-    icon: Stethoscope,
+    org: "Indus Hospital & Health Network (IHHN)",
+    title: "AI-Based Diabetic Foot Ulcer Prognosis",
+    partner: "Indus Diabetes & Endocrinology Centre (IDEC), Karachi",
+    tagline: "Predicting longitudinal healing trajectories before complications escalate.",
+    // 1. Replaced 'icon' with 'logo' path
+    logo: "public\\images\\indus_logo_1.png", // <-- Update this to your actual Indus logo file name
     accent: "from-royal to-electric",
     focus: [
-      "Multi-stage DFU detection & severity grading pipeline",
-      "Prognostic modeling of healing vs. amputation risk",
-      "Longitudinal patient cohort tracking & outcome prediction",
-      "Clinician-in-the-loop validation at point of care",
+      "Longitudinal prognostic modeling of DFU healing vs. amputation risk",
+      "Time-series tissue velocity tracking (Day 1 to Resolution) using YOLOv11",
+      "Predictive treatment pathway recommendations utilizing ConvNeXt",
+      "Clinician-in-the-loop API deployment for point-of-care prognosis",
     ],
     impact: [
-      { icon: Target, label: "Goal", text: "Reduce diabetic amputations through earlier, data-driven intervention." },
-      { icon: Microscope, label: "Approach", text: "Vision transformers on serial wound imagery paired with structured clinical metadata." },
-      { icon: Users, label: "Scope", text: "Built with and for endocrinologists and podiatrists treating thousands of diabetic patients." },
+      { icon: Target, label: "Goal", text: "Reduce diabetic amputations through predictive, data-driven early intervention." },
+      { icon: Microscope, label: "Approach", text: "MultiModal Diabetic Foot Ulcer Reasoning (MMDFUR) for time-series prognosis." },
+      { icon: Users, label: "Scope", text: "Embedded with IDEC endocrinologists to track long-term patient recovery." },
     ],
   },
   {
     code: "AKU",
     org: "Aga Khan University Hospital",
-    title: "Brain Cancer Diagnostics",
+    title: "Neuro-Oncology Radiomics & Survivability",
     partner: "Aga Khan University Hospital (AKU), Karachi",
-    tagline: "Sharper, faster, more confident neuro-oncology decisions.",
-    icon: Building2,
+    tagline: "Extracting complex imaging biomarkers to predict post-treatment outcomes.",
+    // 1. Replaced 'icon' with 'logo' path
+    logo: "public\\images\\aku_logo_2.jfif", // <-- Update this to your actual AKU logo file name
     accent: "from-electric to-cyan-soft",
     focus: [
-      "MRI-based brain tumor segmentation across modalities",
-      "Multi-class classification of gliomas and metastatic lesions",
-      "Pre-operative planning support for neurosurgical teams",
-      "Radiomic biomarkers for treatment response monitoring",
+      "High-throughput 3D radiomic feature extraction from structural MRI",
+      "Longitudinal survivability prediction and risk modeling",
+      "Rigorous clinical validation utilizing survival metrics (C-Index)",
+      "Parallelized data pipelines for large-scale heterogeneous datasets",
     ],
     impact: [
-      { icon: Target, label: "Goal", text: "Cut time-to-diagnosis and elevate diagnostic confidence in complex brain tumor cases." },
-      { icon: Microscope, label: "Approach", text: "3D deep learning on multi-sequence MRI with explainable, clinician-readable outputs." },
-      { icon: Users, label: "Scope", text: "Embedded with neurosurgery and radiology teams at one of South Asia's leading hospitals." },
+      { icon: Target, label: "Goal", text: "Provide neuro-oncologists with quantifiable, AI-driven risk scores for complex gliomas." },
+      { icon: Microscope, label: "Approach", text: "Dimensionality reduction and interpretable deep learning architectures." },
+      { icon: Users, label: "Scope", text: "Bridging the gap between computational feature extraction and neurosurgical planning." },
     ],
   },
 ];
@@ -51,24 +53,23 @@ export function Collaborations() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-electric">
-            Ongoing Work
+            Translational AI
           </div>
         </Reveal>
         <Reveal delay={80}>
           <h2 className="font-display text-4xl font-bold text-foreground md:text-5xl">
-            Active Collaborations
+            Active Clinical Partnerships
           </h2>
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Two flagship clinical partnerships currently driving our research — each embedded
-            inside real hospital workflows, solving problems that matter at the bedside.
+            Two flagship research initiatives currently driving our lab — directly embedded 
+            within hospital workflows to transition computational models into bedside decision-support tools.
           </p>
         </Reveal>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2">
           {collabs.map((c, i) => {
-            const Icon = c.icon;
             return (
               <Reveal key={c.code} delay={i * 120}>
                 <TiltCard intensity={5}>
@@ -78,12 +79,23 @@ export function Collaborations() {
 
                     <div className="relative">
                       <div className="flex items-start gap-5">
+                        
+                        {/* --- NEW LOGO CONTAINER --- */}
                         <div className="relative shrink-0">
+                          {/* Glow effect behind logo */}
                           <div className="absolute inset-0 rounded-2xl bg-electric/30 blur-lg opacity-0 transition group-hover:opacity-100" />
-                          <div className={`relative grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br ${c.accent} text-white shadow-glow`}>
-                            <Icon size={34} />
+                          
+                          {/* Clean white box with object-contain for the hospital logos */}
+                          <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white shadow-glow p-3">
+                            <img 
+                              src={c.logo} 
+                              alt={`${c.code} Logo`}
+                              className="h-full w-full object-contain"
+                            />
                           </div>
                         </div>
+                        {/* --------------------------- */}
+
                         <div className="min-w-0 flex-1">
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="font-display text-base font-bold text-foreground">{c.code}</span>
@@ -123,7 +135,7 @@ export function Collaborations() {
 
                       <div className="mt-8">
                         <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                          What we are building
+                          Methodology & Scope
                         </div>
                         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                           {c.focus.map((d) => (

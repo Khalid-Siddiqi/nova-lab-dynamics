@@ -7,23 +7,24 @@ import { Approach } from "@/components/sections/Approach";
 import { Publications } from "@/components/sections/Publications";
 import { Collaborations } from "@/components/sections/Collaborations";
 import { Team } from "@/components/sections/Team";
+import { ResearchCarousel } from "@/components/sections/ResearchCarousel";
 import { ResearchAreas } from "@/components/sections/ResearchAreas";
 import { Contact } from "@/components/sections/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Medical AI Lab (M.A.L.) — Domain-Driven AI for Healthcare | GUTECH" },
+      { title: "Medical AI Lab (M.A.L.) — Domain-Driven AI for Healthcare | GU TECH, Al Ghazali University" },
       {
         name: "description",
         content:
-          "Medical AI Lab at GUTECH (Ghazali University School of Technology) builds domain-driven AI solutions for healthcare — diabetic foot ulcers, brain cancer, bioinformatics, and more.",
+          "Medical AI Lab at GU TECH, Al Ghazali University builds domain-driven AI solutions for healthcare — diabetic foot ulcers, brain cancer, bioinformatics, and more.",
       },
       { property: "og:title", content: "Medical AI Lab (M.A.L.) — Domain-Driven AI for Healthcare" },
       {
         property: "og:description",
         content:
-          "World-class clinical AI research at GUTECH. Active collaborations with Indus Hospital and Aga Khan University Hospital.",
+          "World-class clinical AI research at GU TECH, Al Ghazali University. Active collaborations with Indus Hospital and Aga Khan University Hospital.",
       },
     ],
     links: [
@@ -44,6 +45,7 @@ function Index() {
       <Navbar />
       <Hero />
       <Collaborations />
+      <ResearchCarousel />
       <Approach />
       <Publications />
       <Team />

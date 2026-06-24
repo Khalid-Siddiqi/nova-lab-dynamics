@@ -72,13 +72,13 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80 backdrop-blur animate-fade-up">
           <Sparkles size={14} className="text-cyan-soft" />
-          AI Research • GUTECH — Ghazali University School of Technology
+          AI Research • GUTECH — Al Ghazali University 
         </div>
 
         <h1 className="font-display text-5xl font-bold leading-[1.05] text-white sm:text-6xl md:text-7xl lg:text-[5.25rem] animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          Solving Healthcare's
+          Solving Healthcare
           <br />
-          Hardest Problems with
+          Problems with
           <br />
           <span className="text-gradient inline-block">Domain-Driven AI</span>
         </h1>
