@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowLeft, ExternalLink, GraduationCap, Award, BookOpen, Users, Quote,
-  Brain, Activity, Dna, Network, BarChart3, Shield,
+  Brain, Activity, Dna, Network, BarChart3, Shield, Linkedin, Mail,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
@@ -57,35 +57,30 @@ const publications = [
     title: "COVID-19 Twitter Sentiment Classification using Hybrid Deep Learning Model",
     venue: "IEEE Access",
     year: 2024,
-    citations: 37,
     authors: "Rauf Ahmed Shams Malick, et al.",
   },
   {
     title: "DRPO: A Drug Repositioning Approach Based on Disease Module",
     venue: "Alexandria Engineering Journal",
     year: 2024,
-    citations: 22,
     authors: "Rauf Ahmed Shams Malick, et al.",
   },
   {
     title: "NeuPD: A Novel Approach for Neurological Disorder Diagnosis Using Deep Learning",
     venue: "Diagnostics (MDPI)",
     year: 2024,
-    citations: 15,
     authors: "Rauf Ahmed Shams Malick, et al.",
   },
   {
     title: "DbKB: A Diabetes Knowledge Base for Explainable AI in Healthcare",
     venue: "Data in Brief",
     year: 2024,
-    citations: 12,
     authors: "Rauf Ahmed Shams Malick, et al.",
   },
   {
     title: "A Deep Learning Pipeline for Diabetic Foot Ulcer Detection and Stage Classification",
     venue: "AIiH 2026, Imperial College London",
     year: 2026,
-    citations: 0,
     authors: "Rauf Ahmed Shams Malick¹, Khalid Khurshid Siddiqui¹, et al.",
     featured: true,
   },
@@ -161,6 +156,28 @@ function RaufProfile() {
                   <div className="mt-1 text-xs font-medium text-muted-foreground">{s.label}</div>
                 </div>
               ))}
+            </div>
+          </Reveal>
+
+          {/* Contact links */}
+          <Reveal delay={240}>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <a
+                href="https://www.linkedin.com/in/insnetworksys/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5 hover:text-electric"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
+              <a
+                href="mailto:rauf.malick@agu.edu.pk"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5 hover:text-electric"
+              >
+                <Mail size={16} />
+                rauf.malick@agu.edu.pk
+              </a>
             </div>
           </Reveal>
         </div>
@@ -285,12 +302,6 @@ function RaufProfile() {
                       </div>
                       <div className="shrink-0 text-right">
                         <div className="text-sm font-bold text-foreground">{pub.year}</div>
-                        {pub.citations !== undefined && (
-                          <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground">
-                            <BookOpen size={11} />
-                            {pub.citations} citations
-                          </div>
-                        )}
                       </div>
                     </div>
                     <div className="mt-3 flex items-center gap-2 text-xs font-medium text-royal">

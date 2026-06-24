@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowLeft, ExternalLink, GraduationCap, Award, BookOpen, Filter, Search, X,
@@ -42,7 +41,6 @@ interface Publication {
   authors: string;
   venue: string;
   year: number;
-  citations?: number;
   category: string;
   featured?: boolean;
 }
@@ -68,7 +66,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Alexandria Engineering Journal",
     year: 2024,
-    citations: 22,
     category: "Cancer Drug Response",
   },
   {
@@ -77,7 +74,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Computers in Biology and Medicine",
     year: 2024,
-    citations: 18,
     category: "Cancer Drug Response",
   },
   {
@@ -86,7 +82,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
     year: 2024,
-    citations: 14,
     category: "Cancer Drug Response",
   },
   {
@@ -95,7 +90,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Briefings in Bioinformatics",
     year: 2023,
-    citations: 45,
     category: "Cancer Drug Response",
   },
 
@@ -115,7 +109,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Journal of Biomedical Informatics",
     year: 2024,
-    citations: 11,
     category: "Diabetes & Blood Sugar",
   },
   {
@@ -124,7 +117,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Data in Brief",
     year: 2024,
-    citations: 12,
     category: "Diabetes & Blood Sugar",
   },
 
@@ -135,7 +127,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Neurocomputing",
     year: 2024,
-    citations: 28,
     category: "Diagnostic Imaging",
   },
   {
@@ -144,7 +135,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Computers in Biology and Medicine",
     year: 2024,
-    citations: 16,
     category: "Diagnostic Imaging",
   },
   {
@@ -153,7 +143,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "IEEE Access",
     year: 2023,
-    citations: 33,
     category: "Diagnostic Imaging",
   },
 
@@ -164,7 +153,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "IEEE Internet of Things Journal",
     year: 2024,
-    citations: 9,
     category: "Medical IoT",
   },
   {
@@ -173,7 +161,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Sensors (MDPI)",
     year: 2023,
-    citations: 21,
     category: "Medical IoT",
   },
 
@@ -184,7 +171,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "BMC Bioinformatics",
     year: 2024,
-    citations: 19,
     category: "Bioinformatics",
   },
   {
@@ -193,7 +179,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Database: The Journal of Biological Databases and Curation",
     year: 2024,
-    citations: 8,
     category: "Bioinformatics",
   },
   {
@@ -202,7 +187,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Diagnostics (MDPI)",
     year: 2024,
-    citations: 15,
     category: "Bioinformatics",
   },
   {
@@ -211,7 +195,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "Frontiers in Genetics",
     year: 2023,
-    citations: 24,
     category: "Bioinformatics",
   },
 
@@ -222,7 +205,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "IEEE Access",
     year: 2024,
-    citations: 37,
     category: "COVID-19",
   },
   {
@@ -231,7 +213,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "IEEE Reviews in Biomedical Engineering",
     year: 2023,
-    citations: 52,
     category: "COVID-19",
   },
 
@@ -242,7 +223,6 @@ const publications: Publication[] = [
     authors: "Rauf Ahmed Shams Malick, et al.",
     venue: "JMIR Mental Health",
     year: 2024,
-    citations: 7,
     category: "Mental Health",
   },
 ];
@@ -408,12 +388,6 @@ function HealthcarePublications() {
                         </div>
                         <div className="shrink-0 text-right">
                           <div className="text-sm font-bold text-foreground">{pub.year}</div>
-                          {pub.citations !== undefined && (
-                            <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground">
-                              <BookOpen size={11} />
-                              {pub.citations} citations
-                            </div>
-                          )}
                         </div>
                       </div>
 

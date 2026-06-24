@@ -65,7 +65,7 @@ export function Navbar() {
           <div className="leading-tight">
             <div className="font-display text-sm font-bold text-white">Medical AI Lab (M.A.L.)</div>
             <div className="text-[10px] uppercase tracking-widest text-white/60">
-              GUTECH — Ghazali University
+              GUTECH — Al Ghazali University
             </div>
           </div>
         </button>

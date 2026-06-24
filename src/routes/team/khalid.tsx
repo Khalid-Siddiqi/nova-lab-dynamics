@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowLeft, ExternalLink, GraduationCap, Award, BookOpen,
-  Brain, Activity, Eye, Shield, BarChart3, Dna,
+  Brain, Activity, Eye, Shield, BarChart3, Dna, Linkedin, Mail,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
@@ -111,6 +111,28 @@ function KhalidProfile() {
               </TiltCard>
             </Reveal>
           </div>
+
+          {/* Contact links */}
+          <Reveal delay={200}>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <a
+                href="https://www.linkedin.com/in/khalid-khurshid-siddiqui-b0b827238/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5 hover:text-electric"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
+              <a
+                href="mailto:khalid20031016@gmail.com"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5 hover:text-electric"
+              >
+                <Mail size={16} />
+                khalid20031016@gmail.com
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 

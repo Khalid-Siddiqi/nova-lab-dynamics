@@ -43,7 +43,7 @@ export function Contact() {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-white/60">Location</div>
-                <div className="text-sm font-semibold">GUTECH — Ghazali University, Karachi, Pakistan</div>
+                <div className="text-sm font-semibold">GUTECH — Al Ghazali University, Karachi, Pakistan</div>
               </div>
             </div>
           </Reveal>
@@ -81,7 +81,7 @@ export function Contact() {
       <div className="relative mt-24 border-t border-white/10 pt-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 text-xs text-white/60 sm:flex-row">
           <div>© {new Date().getFullYear()} Medical AI Lab (M.A.L.) — GUTECH</div>
-          <div>Ghazali University School of Technology · Karachi, Pakistan</div>
+          <div>Al Ghazali University School of Technology · Karachi, Pakistan</div>
         </div>
       </div>
     </section>
