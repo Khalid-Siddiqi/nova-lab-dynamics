@@ -10,17 +10,17 @@ All tokens live in `src/styles.css` (Tailwind v4, CSS-first config — no `tailw
 
 Defined as OKLCH custom properties under `:root` in `src/styles.css`.
 
-| Token            | OKLCH                     | Approx Hex  | Usage                      |
-| ---------------- | ------------------------- | ----------- | -------------------------- |
-| `--navy-deep`  | `oklch(0.18 0.07 265)`  | `#081B3A` | Hero bg, foreground text   |
-| `--navy`       | `oklch(0.26 0.09 265)`  | `#13234D` | Dark surfaces              |
-| `--royal`      | `oklch(0.58 0.22 262)`  | `#0E5EFF` | Primary brand, CTAs        |
-| `--electric`   | `oklch(0.72 0.16 245)`  | `#39A7FF` | Accent, glows, hover       |
-| `--cyan-soft`  | `oklch(0.88 0.10 220)`  | `#6EE7FF` | Highlights, gradient stops |
-| `--background` | `oklch(0.99 0.005 240)` | near-white  | Page bg                    |
-| `--foreground` | `oklch(0.18 0.07 265)`  | navy-deep   | Body text                  |
-| `--primary`    | royal                     | —          | shadcn primary             |
-| `--accent`     | electric                  | —          | shadcn accent              |
+| Token            | OKLCH                        | Approx Hex | Usage                          |
+| ---------------- | ---------------------------- | ---------- | ------------------------------ |
+| `--navy-deep`    | `oklch(0.18 0.07 265)`       | `#081B3A`  | Hero bg, foreground text       |
+| `--navy`         | `oklch(0.26 0.09 265)`       | `#13234D`  | Dark surfaces                  |
+| `--royal`        | `oklch(0.58 0.22 262)`       | `#0E5EFF`  | Primary brand, CTAs            |
+| `--electric`     | `oklch(0.72 0.16 245)`       | `#39A7FF`  | Accent, glows, hover           |
+| `--cyan-soft`    | `oklch(0.88 0.10 220)`       | `#6EE7FF`  | Highlights, gradient stops     |
+| `--background`   | `oklch(0.99 0.005 240)`      | near-white | Page bg                        |
+| `--foreground`   | `oklch(0.18 0.07 265)`       | navy-deep  | Body text                      |
+| `--primary`      | royal                        | —          | shadcn primary                 |
+| `--accent`       | electric                     | —          | shadcn accent                  |
 
 Dark mode overrides background → navy-deep, card → navy.
 
@@ -53,19 +53,19 @@ Utilities: `.bg-hero`, `.bg-cta`, `.text-gradient`.
 
 ## 5. Custom Utilities (Tailwind v4 `@utility`)
 
-| Class                    | Effect                                                 |
-| ------------------------ | ------------------------------------------------------ |
-| `glass`                | translucent white blur(20px) + glass shadow            |
-| `glass-dark`           | translucent navy blur for dark sections                |
-| `text-gradient`        | electric → cyan text fill                             |
-| `bg-hero` / `bg-cta` | mesh / CTA gradient backgrounds                        |
-| `shadow-glow`          | brand glow                                             |
-| `animate-float`        | gentle 6s vertical float                               |
-| `animate-gradient-pan` | shifting gradient bg (8s)                              |
-| `animate-fade-up`      | one-shot 0.8s rise-in                                  |
-| `animate-pulse-ring`   | radiating ring (status dots)                           |
-| `reveal`               | scroll-reveal base (toggled by `.is-visible` via IO) |
-| `magnetic`             | smooth transform transition for magnetic buttons       |
+| Class                  | Effect                                                  |
+| ---------------------- | ------------------------------------------------------- |
+| `glass`                | translucent white blur(20px) + glass shadow             |
+| `glass-dark`           | translucent navy blur for dark sections                 |
+| `text-gradient`        | electric → cyan text fill                               |
+| `bg-hero` / `bg-cta`   | mesh / CTA gradient backgrounds                         |
+| `shadow-glow`          | brand glow                                              |
+| `animate-float`        | gentle 6s vertical float                                |
+| `animate-gradient-pan` | shifting gradient bg (8s)                               |
+| `animate-fade-up`      | one-shot 0.8s rise-in                                   |
+| `animate-pulse-ring`   | radiating ring (status dots)                            |
+| `reveal`               | scroll-reveal base (toggled by `.is-visible` via IO)    |
+| `magnetic`             | smooth transform transition for magnetic buttons        |
 
 ## 6. Interactive Components
 
