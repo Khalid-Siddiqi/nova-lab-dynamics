@@ -12,7 +12,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/team/rauf")({
   head: () => ({
     meta: [
-      { title: "Dr. Rauf Ahmed Shams Malick — Principal Investigator | M.A.L. | GUTECH" },
+      { title: "Dr. Rauf Ahmed Shams Malick — Principal Investigator | MAL | GUTECH" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/team/rauf")({
       {
         property: "og:description",
         content:
-          "Principal Investigator & Lab Leader at M.A.L., GUTECH. Specializing in Medical AI, Cancer Drug Response, Bioinformatics, and Explainable AI.",
+          "Principal Investigator & Lab Leader at MAL, GUTECH. Specializing in Medical AI, Cancer Drug Response, Bioinformatics, and Explainable AI.",
       },
     ],
     links: [
@@ -122,7 +122,7 @@ function RaufProfile() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="mt-4 text-lg font-semibold text-royal">
-                  Principal Investigator & Lab Leader, M.A.L.
+                  Principal Investigator & Lab Leader, MAL
                 </p>
                 <p className="mt-1 text-base text-muted-foreground">
                   Professor & Chairman, Department of Computer Science, GUTECH — Al Ghazali University
@@ -198,7 +198,7 @@ function RaufProfile() {
                   challenges with a relentless focus on understanding the problem first. His philosophy is 
                   simple: gain deep domain knowledge, immerse in the clinical context, and only then build 
                   AI solutions that genuinely meet the needs of clinicians and patients. This approach 
-                  underpins every project at the Medical AI Lab (M.A.L.).
+                  underpins every project at the Medical AI Lab (MAL).
                 </p>
               </Reveal>
               <Reveal delay={120}>
@@ -221,7 +221,7 @@ function RaufProfile() {
               </Reveal>
               <Reveal delay={240}>
                 <p>
-                  Looking ahead, Dr. Malick envisions M.A.L. as a globally recognized hub for developing 
+                  Looking ahead, Dr. Malick envisions MAL as a globally recognized hub for developing
                   clinician-centered AI systems that operate effectively in resource-constrained environments, 
                   ultimately bridging the gap between computational research and real-world patient impact 
                   across the developing world.
@@ -292,7 +292,7 @@ function RaufProfile() {
                         {pub.featured && (
                           <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-600">
                             <Award size={12} />
-                            First M.A.L. Publication
+                            First MAL Publication
                           </div>
                         )}
                         <h3 className="font-display text-lg font-bold text-foreground leading-snug">
@@ -326,7 +326,7 @@ function RaufProfile() {
           </Reveal>
           <Reveal delay={100}>
             <p className="mt-4 max-w-lg mx-auto text-muted-foreground">
-              Discover the full breadth of healthcare AI research being conducted at M.A.L.
+              Discover the full breadth of healthcare AI research being conducted at MAL.
             </p>
           </Reveal>
           <Reveal delay={160}>

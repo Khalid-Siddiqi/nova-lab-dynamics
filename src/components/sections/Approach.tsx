@@ -27,7 +27,7 @@ export function Approach() {
           <Reveal delay={160}>
             <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground">
               <p>
-                At M.A.L., we believe meaningful AI starts with understanding the
+                At MAL, we believe meaningful AI starts with understanding the
                 problem. We collaborate closely with clinicians, absorb deep
                 domain knowledge, and only then design and deploy targeted AI
                 systems. This philosophy guides every project we undertake.

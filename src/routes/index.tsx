@@ -14,13 +14,13 @@ import { Contact } from "@/components/sections/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Medical AI Lab (M.A.L.) — Domain-Driven AI for Healthcare | GU TECH, Al Ghazali University" },
+      { title: "Medical AI Lab (MAL) — Domain-Driven AI for Healthcare | GU TECH, Al Ghazali University" },
       {
         name: "description",
         content:
           "Medical AI Lab at GU TECH, Al Ghazali University builds domain-driven AI solutions for healthcare — diabetic foot ulcers, brain cancer, bioinformatics, and more.",
       },
-      { property: "og:title", content: "Medical AI Lab (M.A.L.) — Domain-Driven AI for Healthcare" },
+      { property: "og:title", content: "Medical AI Lab (MAL) — Domain-Driven AI for Healthcare" },
       {
         property: "og:description",
         content:

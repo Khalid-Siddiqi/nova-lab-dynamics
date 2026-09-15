@@ -6,11 +6,11 @@ import { TiltCard } from "../TiltCard";
 const team = [
   {
     name: "Dr. Rauf Ahmed Shams Malick",
-    role: "Lab Leader",
+    role: "Lab Director",
     title: "Professor & Chairman, Computer Science, GUTECH · Principal Investigator",
     bio: "Over 20 years pioneering AI research, data science, and digital transformation in healthcare.",
     photo: "/images/Dr_Rauf.avif",
-    badge: "Lab Leader",
+    badge: "Lab Director",
     route: "/team/rauf",
   },
   {
@@ -38,7 +38,7 @@ export function Team() {
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Meet the researchers driving innovation at M.A.L.
+            Meet the researchers driving innovation at MAL
           </p>
         </Reveal>
 

@@ -7,10 +7,10 @@ const collabs = [
     code: "IDEC",
     org: "Indus Hospital & Health Network (IHHN)",
     title: "AI-Based Diabetic Foot Ulcer Prognosis",
-    partner: "Indus Diabetes & Endocrinology Centre (IDEC), Karachi",
+    partner: "Indus Diabetes & Endocrinology Department (IDEC)",
     tagline: "Predicting longitudinal healing trajectories before complications escalate.",
-    // 1. Replaced 'icon' with 'logo' path
-    logo: "public\\images\\indus_logo_1.png", // <-- Update this to your actual Indus logo file name
+    // Note: Use forward slashes and drop 'public' for React/Next.js to load them correctly
+    logo: "/images/indus_logo_1.png", 
     accent: "from-royal to-electric",
     focus: [
       "Longitudinal prognostic modeling of DFU healing vs. amputation risk",
@@ -25,13 +25,13 @@ const collabs = [
     ],
   },
   {
-    code: "AKU",
-    org: "Aga Khan University Hospital",
+    code: "COORS",
+    org: "Aga Khan University Hospital (AKU)",
     title: "Neuro-Oncology Radiomics & Survivability",
-    partner: "Aga Khan University Hospital (AKU), Karachi",
+    partner: "Centre of Oncological Research in Surgery (COORS), AKU",
     tagline: "Extracting complex imaging biomarkers to predict post-treatment outcomes.",
-    // 1. Replaced 'icon' with 'logo' path
-    logo: "public\\images\\aku_logo_2.jfif", // <-- Update this to your actual AKU logo file name
+    // Note: Use forward slashes and drop 'public'
+    logo: "/images/aku_logo_2.jfif", 
     accent: "from-electric to-cyan-soft",
     focus: [
       "High-throughput 3D radiomic feature extraction from structural MRI",

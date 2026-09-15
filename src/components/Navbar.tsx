@@ -58,12 +58,21 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <button onClick={() => scrollTo("home")} className="flex items-center gap-2.5 text-left">
-          <div className="grid h-9 w-9 place-items-center rounded-xl bg-cta shadow-glow animate-gradient-pan">
-            <span className="font-display text-sm font-bold text-white">M</span>
+        {/* INCREASED GAP: gap-2.5 -> gap-3 */}
+        <button onClick={() => scrollTo("home")} className="flex items-center gap-3 text-left group">
+          
+          {/* INCREASED LOGO SIZE: h-14 w-14 */}
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full shadow-glow transition duration-300 group-hover:shadow-elevate">
+            <img
+              src="/images/logo.png"
+              alt="Medical AI Lab Logo"
+              className="h-full w-full object-cover"
+            />
           </div>
+          
           <div className="leading-tight">
-            <div className="font-display text-sm font-bold text-white">Medical AI Lab (M.A.L.)</div>
+            {/* INCREASED TEXT SIZE: text-sm -> text-base */}
+            <div className="font-display text-base font-bold text-white">Medical AI Lab (MAL)</div>
             <div className="text-[10px] uppercase tracking-widest text-white/60">
               GUTECH — Al Ghazali University
             </div>
@@ -88,6 +97,7 @@ export function Navbar() {
           ))}
         </nav>
 
+        {/* FIXED MOBILE MENU SIZE: back to h-10 w-10 so it's not huge */}
         <button
           onClick={() => setOpen((o) => !o)}
           className="grid h-10 w-10 place-items-center rounded-full text-white lg:hidden"

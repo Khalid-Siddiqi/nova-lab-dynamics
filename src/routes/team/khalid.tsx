@@ -12,7 +12,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/team/khalid")({
   head: () => ({
     meta: [
-      { title: "Khalid Khurshid Siddiqui — Research Assistant, Medical AI | M.A.L. | GUTECH" },
+      { title: "Khalid Khurshid Siddiqui — Research Assistant, Medical AI | MAL | GUTECH" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/team/khalid")({
       {
         property: "og:description",
         content:
-          "Research Assistant at M.A.L., GUTECH. Specializing in Medical AI, Computer Vision, MLOps, and Diabetic Foot Ulcer prognosis.",
+          "Research Assistant at MAL, GUTECH. Specializing in Medical AI, Computer Vision, MLOps, and Diabetic Foot Ulcer prognosis.",
       },
     ],
     links: [
@@ -148,7 +148,7 @@ function KhalidProfile() {
               <Reveal delay={60}>
                 <p>
                   Khalid Khurshid Siddiqui is an AI Engineer and researcher focused on Medical AI,
-                  Deep Learning, and multi-modal AI solutions. At the Medical AI Lab (M.A.L.), he
+                  Deep Learning, and multi-modal AI solutions. At the Medical AI Lab (MAL), he
                   develops clinician-centered AI systems that bridge the gap between healthcare and
                   machine learning, ensuring that every model translates into real clinical value.
                 </p>
@@ -238,7 +238,7 @@ function KhalidProfile() {
           </Reveal>
           <Reveal delay={100}>
             <p className="mt-4 max-w-lg mx-auto text-muted-foreground">
-              Discover the full breadth of healthcare AI research being conducted at M.A.L.
+              Discover the full breadth of healthcare AI research being conducted at MAL.
             </p>
           </Reveal>
           <Reveal delay={160}>

@@ -80,7 +80,7 @@ export function Contact() {
 
       <div className="relative mt-24 border-t border-white/10 pt-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 text-xs text-white/60 sm:flex-row">
-          <div>© {new Date().getFullYear()} Medical AI Lab (M.A.L.) — GUTECH</div>
+          <div>© {new Date().getFullYear()} Medical AI Lab (MAL) — GUTECH</div>
           <div>Al Ghazali University School of Technology · Karachi, Pakistan</div>
         </div>
       </div>

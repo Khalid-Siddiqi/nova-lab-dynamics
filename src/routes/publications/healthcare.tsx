@@ -13,13 +13,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/publications/healthcare")({
   head: () => ({
     meta: [
-      { title: "Healthcare & Medical AI Publications — M.A.L. | GUTECH" },
+      { title: "Healthcare & Medical AI Publications — MAL | GUTECH" },
       {
         name: "description",
         content:
           "Browse the Medical AI Lab's publications in healthcare AI, including cancer drug response, diabetes, bioinformatics, medical IoT, and more.",
       },
-      { property: "og:title", content: "Healthcare & Medical AI Publications — M.A.L." },
+      { property: "og:title", content: "Healthcare & Medical AI Publications — MAL" },
       {
         property: "og:description",
         content:
@@ -94,7 +94,7 @@ type GroupKey = (typeof groups)[number]["key"];
 // Publication data
 // ────────────────────────────────────────────────────────────────────
 const publications: Publication[] = [
-  // ── MAL Research Outputs (conducted under M.A.L.) ──
+  // ── MAL Research Outputs (conducted under MAL) ──
   {
     id: "DFU-2026",
     title: "A Deep Learning Pipeline for Diabetic Foot Ulcer Detection and Stage Classification",
@@ -390,7 +390,7 @@ function HealthcarePublications() {
                   {groupCounts.mal}
                 </div>
                 <div className="mt-1 text-xs font-medium text-muted-foreground">
-                  M.A.L. Research Outputs
+                  MAL Research Outputs
                 </div>
               </div>
               <div className="text-center col-span-3 sm:col-span-1">
@@ -553,14 +553,14 @@ function HealthcarePublications() {
                             >
                               <g.icon size={12} />
                               {pub.group === "mal"
-                                ? "M.A.L. Research Output"
+                                ? "MAL Research Output"
                                 : "Foundational Research"}
                             </div>
 
                             {pub.featured && (
                               <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-600">
                                 <Award size={12} />
-                                First M.A.L. Publication
+                                First MAL Publication
                               </div>
                             )}
                             <h3 className="font-display text-lg font-bold text-foreground leading-snug">

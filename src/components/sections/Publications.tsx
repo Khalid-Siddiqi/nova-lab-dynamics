@@ -1,4 +1,5 @@
-import { Award, BookOpen, ExternalLink, Users } from "lucide-react";
+import { Award, BookOpen, Users } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "../Reveal";
 import { TiltCard } from "../TiltCard";
 
@@ -73,24 +74,18 @@ export function Publications() {
                   ))}
                 </div>
 
-                {/* reading progress (decorative) */}
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-secondary">
-                    <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-royal via-electric to-cyan-soft" />
-                  </div>
-                  <span className="text-xs text-muted-foreground">Abstract • 75%</span>
-                </div>
-
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <button
-                    data-cursor="hover"
-                    className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:shadow-elevate"
-                  >
-                    Read Publication <ExternalLink size={14} />
-                  </button>
+                {/* Lab Tag & CTA */}
+                <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs text-muted-foreground">
-                    <Users size={14} /> First publication produced entirely under M.A.L.
+                    <Users size={14} /> First publication produced entirely under MAL
                   </div>
+                  <Link
+                    to="/publications/healthcare"
+                    className="inline-flex items-center gap-2 rounded-full bg-electric px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:shadow-elevate hover:brightness-110"
+                  >
+                    <BookOpen size={16} />
+                    Browse All Publications
+                  </Link>
                 </div>
               </div>
             </div>
