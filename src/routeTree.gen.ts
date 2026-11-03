@@ -9,24 +9,55 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as CollaborationsRouteImport } from './routes/collaborations'
+import { Route as CollaborateRouteImport } from './routes/collaborate'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TeamRaufRouteImport } from './routes/team/rauf'
-import { Route as TeamKhalidRouteImport } from './routes/team/khalid'
+import { Route as TeamIndexRouteImport } from './routes/team/index'
+import { Route as PublicationsIndexRouteImport } from './routes/publications/index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
+import { Route as TeamSlugRouteImport } from './routes/team/$slug'
 import { Route as PublicationsHealthcareRouteImport } from './routes/publications/healthcare'
+import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
 
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollaborationsRoute = CollaborationsRouteImport.update({
+  id: '/collaborations',
+  path: '/collaborations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollaborateRoute = CollaborateRouteImport.update({
+  id: '/collaborate',
+  path: '/collaborate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamRaufRoute = TeamRaufRouteImport.update({
-  id: '/team/rauf',
-  path: '/team/rauf',
+const TeamIndexRoute = TeamIndexRouteImport.update({
+  id: '/team/',
+  path: '/team/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamKhalidRoute = TeamKhalidRouteImport.update({
-  id: '/team/khalid',
-  path: '/team/khalid',
+const PublicationsIndexRoute = PublicationsIndexRouteImport.update({
+  id: '/publications/',
+  path: '/publications/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamSlugRoute = TeamSlugRouteImport.update({
+  id: '/team/$slug',
+  path: '/team/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicationsHealthcareRoute = PublicationsHealthcareRouteImport.update({
@@ -34,48 +65,124 @@ const PublicationsHealthcareRoute = PublicationsHealthcareRouteImport.update({
   path: '/publications/healthcare',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/collaborate': typeof CollaborateRoute
+  '/collaborations': typeof CollaborationsRoute
+  '/news': typeof NewsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/publications/healthcare': typeof PublicationsHealthcareRoute
-  '/team/khalid': typeof TeamKhalidRoute
-  '/team/rauf': typeof TeamRaufRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/publications/': typeof PublicationsIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/collaborate': typeof CollaborateRoute
+  '/collaborations': typeof CollaborationsRoute
+  '/news': typeof NewsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/publications/healthcare': typeof PublicationsHealthcareRoute
-  '/team/khalid': typeof TeamKhalidRoute
-  '/team/rauf': typeof TeamRaufRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/projects': typeof ProjectsIndexRoute
+  '/publications': typeof PublicationsIndexRoute
+  '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/collaborate': typeof CollaborateRoute
+  '/collaborations': typeof CollaborationsRoute
+  '/news': typeof NewsRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/publications/healthcare': typeof PublicationsHealthcareRoute
-  '/team/khalid': typeof TeamKhalidRoute
-  '/team/rauf': typeof TeamRaufRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/publications/': typeof PublicationsIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/publications/healthcare' | '/team/khalid' | '/team/rauf'
+  fullPaths:
+    | '/'
+    | '/collaborate'
+    | '/collaborations'
+    | '/news'
+    | '/projects/$slug'
+    | '/publications/healthcare'
+    | '/team/$slug'
+    | '/projects/'
+    | '/publications/'
+    | '/team/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/publications/healthcare' | '/team/khalid' | '/team/rauf'
+  to:
+    | '/'
+    | '/collaborate'
+    | '/collaborations'
+    | '/news'
+    | '/projects/$slug'
+    | '/publications/healthcare'
+    | '/team/$slug'
+    | '/projects'
+    | '/publications'
+    | '/team'
   id:
     | '__root__'
     | '/'
+    | '/collaborate'
+    | '/collaborations'
+    | '/news'
+    | '/projects/$slug'
     | '/publications/healthcare'
-    | '/team/khalid'
-    | '/team/rauf'
+    | '/team/$slug'
+    | '/projects/'
+    | '/publications/'
+    | '/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CollaborateRoute: typeof CollaborateRoute
+  CollaborationsRoute: typeof CollaborationsRoute
+  NewsRoute: typeof NewsRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
   PublicationsHealthcareRoute: typeof PublicationsHealthcareRoute
-  TeamKhalidRoute: typeof TeamKhalidRoute
-  TeamRaufRoute: typeof TeamRaufRoute
+  TeamSlugRoute: typeof TeamSlugRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
+  PublicationsIndexRoute: typeof PublicationsIndexRoute
+  TeamIndexRoute: typeof TeamIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collaborations': {
+      id: '/collaborations'
+      path: '/collaborations'
+      fullPath: '/collaborations'
+      preLoaderRoute: typeof CollaborationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collaborate': {
+      id: '/collaborate'
+      path: '/collaborate'
+      fullPath: '/collaborate'
+      preLoaderRoute: typeof CollaborateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -83,18 +190,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/rauf': {
-      id: '/team/rauf'
-      path: '/team/rauf'
-      fullPath: '/team/rauf'
-      preLoaderRoute: typeof TeamRaufRouteImport
+    '/team/': {
+      id: '/team/'
+      path: '/team'
+      fullPath: '/team/'
+      preLoaderRoute: typeof TeamIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/khalid': {
-      id: '/team/khalid'
-      path: '/team/khalid'
-      fullPath: '/team/khalid'
-      preLoaderRoute: typeof TeamKhalidRouteImport
+    '/publications/': {
+      id: '/publications/'
+      path: '/publications'
+      fullPath: '/publications/'
+      preLoaderRoute: typeof PublicationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$slug': {
+      id: '/team/$slug'
+      path: '/team/$slug'
+      fullPath: '/team/$slug'
+      preLoaderRoute: typeof TeamSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publications/healthcare': {
@@ -104,14 +225,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicationsHealthcareRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CollaborateRoute: CollaborateRoute,
+  CollaborationsRoute: CollaborationsRoute,
+  NewsRoute: NewsRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
   PublicationsHealthcareRoute: PublicationsHealthcareRoute,
-  TeamKhalidRoute: TeamKhalidRoute,
-  TeamRaufRoute: TeamRaufRoute,
+  TeamSlugRoute: TeamSlugRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
+  PublicationsIndexRoute: PublicationsIndexRoute,
+  TeamIndexRoute: TeamIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

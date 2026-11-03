@@ -1,98 +1,59 @@
-# Theme Guide — Lab/Research Site
+# Theme & Content Guide — Medical AI Lab (MAL), GUTECH
 
-A premium "AI research institute" theme: deep navy + royal/electric blue with soft cyan highlights, glassmorphism, gradient mesh backgrounds, custom cursor, magnetic buttons, tilt cards, and scroll-reveal animations.
+A calm, readable identity: GUTECH navy from the lab logo, warm off-white paper,
+a serif for headings, and generous spacing. No glow, tilt, or cursor effects.
 
-All tokens live in `src/styles.css` (Tailwind v4, CSS-first config — no `tailwind.config.js`). Use semantic class names (`bg-primary`, `text-foreground`, `text-gradient`, `bg-hero`) — never hardcode hex colors in components.
+## Updating content (no design work needed)
 
----
+All site content lives in `src/content/`. Edit these files; pages update automatically.
 
-## 1. Color Palette
+| File                | What it holds                                                    |
+| ------------------- | ---------------------------------------------------------------- |
+| `site.ts`           | Lab name, institution, and the contact email (form goes here)    |
+| `projects.ts`       | Projects & products — one page each at `/projects/<slug>`        |
+| `collaborations.ts` | Partnership stories                                              |
+| `people.ts`         | Team members — one page each at `/team/<slug>`                   |
+| `publications.ts`   | Lab publications and selected prior work by members              |
+| `events.ts`         | News & events — split into upcoming/past by date automatically   |
 
-Defined as OKLCH custom properties under `:root` in `src/styles.css`.
+Rules the pages enforce:
 
-| Token            | OKLCH                        | Approx Hex | Usage                          |
-| ---------------- | ---------------------------- | ---------- | ------------------------------ |
-| `--navy-deep`    | `oklch(0.18 0.07 265)`       | `#081B3A`  | Hero bg, foreground text       |
-| `--navy`         | `oklch(0.26 0.09 265)`       | `#13234D`  | Dark surfaces                  |
-| `--royal`        | `oklch(0.58 0.22 262)`       | `#0E5EFF`  | Primary brand, CTAs            |
-| `--electric`     | `oklch(0.72 0.16 245)`       | `#39A7FF`  | Accent, glows, hover           |
-| `--cyan-soft`    | `oklch(0.88 0.10 220)`       | `#6EE7FF`  | Highlights, gradient stops     |
-| `--background`   | `oklch(0.99 0.005 240)`      | near-white | Page bg                        |
-| `--foreground`   | `oklch(0.18 0.07 265)`       | navy-deep  | Body text                      |
-| `--primary`      | royal                        | —          | shadcn primary                 |
-| `--accent`       | electric                     | —          | shadcn accent                  |
+- **Missing content** — set a field to `null` and the site shows a clearly marked
+  amber **Placeholder** box instead.
+- **Aims vs. results** — `designedTo` lists what a tool is meant to do;
+  `measured` lists only outcomes the team actually measured (with how and where).
+  They are shown in separate boxes.
+- **Project stage** — set `stageConfirmed: true` once the project lead confirms it;
+  until then the stage carries a "to be confirmed" tag.
+- **Screenshots** — only set `screenshot` once it has been approved for publication.
+- **Publications** — `carriedOut: "lab" | "prior"` decides the section (where the
+  research was done, not when it was published). List authors in the original
+  order; add `member: "<slug>"` to highlight and link a lab member.
+  `verified: false` shows a "citation details to be verified" tag.
+- Photos go in `public/images/` (events: `public/images/events/`).
 
-Dark mode overrides background → navy-deep, card → navy.
+## Color tokens (`src/styles.css`, `:root`)
 
-## 2. Typography
+| Token                             | Usage                                   |
+| --------------------------------- | --------------------------------------- |
+| `--navy-deep`, `--navy`           | Brand navy (footer, dark panels)        |
+| `--primary`                       | Buttons, stage indicator                |
+| `--link`                          | Text links (`text-link` utility)        |
+| `--sand`                          | Page-header and alternating sections    |
+| `--note*`                         | Placeholders and "to be confirmed" tags |
+| `--measured*`                     | "Measured so far" outcomes              |
 
-Load via `<link>` in `src/routes/__root.tsx` head (NOT `@import` in CSS).
+Use semantic classes (`bg-primary`, `text-muted-foreground`, `bg-note`, …), not raw hex.
 
-- **Display** (h1–h4): `Space Grotesk`, weights 500/600/700, letter-spacing `-0.02em`
-- **Body**: `Inter`, weights 400/500/600
+## Typography
 
-```html
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-```
+- Headings: **Source Serif 4** (`font-display`)
+- Body: **Inter** (`font-sans`)
 
-## 3. Gradients
+Both load from Google Fonts in `src/routes/__root.tsx`.
 
-```css
---gradient-hero: radial mesh of royal + electric + cyan over navy
---gradient-cta:  linear royal → electric → cyan-soft (135°)
---gradient-text: linear electric → cyan-soft (135°)
-```
+## Shared components (`src/components/site/`)
 
-Utilities: `.bg-hero`, `.bg-cta`, `.text-gradient`.
-
-## 4. Shadows
-
-- `--shadow-glow` — electric ring + royal drop, used on CTAs / featured cards
-- `--shadow-glass` — soft outer + inner top-light, used with `.glass`
-- `--shadow-elevate` — deep dropdown for lifted cards
-
-## 5. Custom Utilities (Tailwind v4 `@utility`)
-
-| Class                  | Effect                                                  |
-| ---------------------- | ------------------------------------------------------- |
-| `glass`                | translucent white blur(20px) + glass shadow             |
-| `glass-dark`           | translucent navy blur for dark sections                 |
-| `text-gradient`        | electric → cyan text fill                               |
-| `bg-hero` / `bg-cta`   | mesh / CTA gradient backgrounds                         |
-| `shadow-glow`          | brand glow                                              |
-| `animate-float`        | gentle 6s vertical float                                |
-| `animate-gradient-pan` | shifting gradient bg (8s)                               |
-| `animate-fade-up`      | one-shot 0.8s rise-in                                   |
-| `animate-pulse-ring`   | radiating ring (status dots)                            |
-| `reveal`               | scroll-reveal base (toggled by `.is-visible` via IO)    |
-| `magnetic`             | smooth transform transition for magnetic buttons        |
-
-## 6. Interactive Components
-
-- `CustomCursor` — dot + ring, mix-blend-mode difference; hides on touch
-- `MagneticButton` — pointer-following translate inside CTA
-- `TiltCard` — pointer-tracked 3D rotateX/Y
-- `Reveal` — IntersectionObserver toggles `.is-visible`
-- `ScrollProgress` — top progress bar driven by scroll
-- `.mouse-glow` — radial gradient that follows pointer via `--mx`/`--my`
-
-## 7. Radius Scale
-
-Base `--radius: 0.875rem` → `rounded-sm/md/lg/xl/2xl/3xl` cascade.
-
-## 8. Reuse Checklist
-
-To port this theme to another project:
-
-1. Copy `src/styles.css` (the `@theme`, `:root`, `.dark`, `@utility`, and `@keyframes` blocks).
-2. Add the Google Fonts `<link>` to your root layout `<head>`.
-3. Copy `src/components/`: `CustomCursor`, `MagneticButton`, `TiltCard`, `Reveal`, `ScrollProgress`, `Counter`.
-4. Use semantic tokens in JSX: `bg-primary`, `text-foreground`, `bg-hero`, `text-gradient`, `glass`, `shadow-glow` — never raw hex/Tailwind color utilities like `bg-blue-500` or `text-white`.
-5. Tailwind v4 only — do NOT create `tailwind.config.js`; configure via `@theme` in CSS.
-
-## 9. Design Principles
-
-- **No generic AI purple/indigo.** Stick to navy + royal/electric blue + cyan.
-- **Glass over flat.** Cards use `glass` or `glass-dark` with subtle borders.
-- **Motion is purposeful.** Reveal on scroll, magnetic on CTAs, tilt on featured cards — never decorative jitter.
-- **Semantic tokens only.** All theming flows through CSS variables so dark mode + future rebrands are one-file changes.
+`SiteHeader`, `SiteFooter`, `Page` (`Container`, `PageHeader`, `SectionHeading`),
+`Placeholder` / `ImagePlaceholder` / `Unconfirmed`, `StageBadge` / `StageTrack`,
+`Outcomes`, `ProjectCard`, `Citation`.
