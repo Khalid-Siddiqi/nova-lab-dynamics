@@ -58,6 +58,7 @@ const categories = [
   "Bioinformatics",
   "COVID-19",
   "Mental Health",
+  "Clinical Data Mining",
 ] as const;
 
 type Category = (typeof categories)[number];
@@ -194,6 +195,34 @@ const publications: Publication[] = [
     category: "Diagnostic Imaging",
     group: "leadership",
   },
+  {
+    id: "vlm-medical-reasoning-2026",
+    title: "Towards Responsible Multimodal Medical Reasoning via Context-Aligned Vision-Language Models",
+    authors: "Sumra Khan, S. Chhabriya, A. Zafar, S. Arif, A. Muneer, A. Zafar, S. Raza, et al.",
+    venue: "arXiv preprint arXiv:2604.08815",
+    year: 2026,
+    category: "Diagnostic Imaging",
+    group: "leadership",
+  },
+  {
+    id: "asd-rsfmri-2026",
+    title:
+      "Beyond Anatomy: Explainable ASD Classification from rs-fMRI via Functional Parcellation and Graph Attention Networks",
+    authors: "S. H. Madani, N. Bibi, A. R. Jeraj, Sumra Khan, A. Zafar, R. Qureshi",
+    venue: "arXiv preprint arXiv:2603.02518",
+    year: 2026,
+    category: "Diagnostic Imaging",
+    group: "leadership",
+  },
+  {
+    id: "breast-cancer-vgg-2024",
+    title: "Comparative Study of Transfer Learning with VGG16 and VGG19 for Breast Cancer Classification",
+    authors: "Sumra Khan, F. T. Zahra, A. Asif, S. Arif, U. Fatima",
+    venue: "2024 26th International Multi-Topic Conference (INMIC)",
+    year: 2024,
+    category: "Diagnostic Imaging",
+    group: "leadership",
+  },
 
   // Medical IoT
   {
@@ -283,6 +312,27 @@ const publications: Publication[] = [
     category: "Mental Health",
     group: "leadership",
   },
+  {
+    id: "mental-health-tech-dataset-2024",
+    title:
+      "Survey Dataset on Mental Health in Tech Professionals from Open Sourcing Mental Health Surveys (2017–2021)",
+    authors: "F. Rasheed, Sumra Khan, S. M. Waqas, R. A. Khan, S. Arif",
+    venue: "Data in Brief",
+    year: 2024,
+    category: "Mental Health",
+    group: "leadership",
+  },
+
+  // Clinical Data Mining
+  {
+    id: "fuzzy-clustering-diagnosis-2022",
+    title: "Fuzzy Density-Based Clustering for Medical Diagnosis",
+    authors: "S. M. Waqas, K. Hussain, S. A. Mostafa, N. M. Nawi, Sumra Khan",
+    venue: "International Conference on Soft Computing and Data Mining (SCDM)",
+    year: 2022,
+    category: "Clinical Data Mining",
+    group: "leadership",
+  },
 ];
 
 // ────────────────────────────────────────────────────────────────────
@@ -300,6 +350,7 @@ const categoryCounts = {
   "Bioinformatics": publications.filter((p) => p.category === "Bioinformatics").length,
   "COVID-19": publications.filter((p) => p.category === "COVID-19").length,
   "Mental Health": publications.filter((p) => p.category === "Mental Health").length,
+  "Clinical Data Mining": publications.filter((p) => p.category === "Clinical Data Mining").length,
 };
 
 const groupCounts = {
@@ -624,6 +675,12 @@ function HealthcarePublications() {
                 className="inline-flex items-center gap-2 rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-elevate"
               >
                 Dr. Rauf's Profile
+              </Link>
+              <Link
+                to="/team/sumra"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5"
+              >
+                Ms. Sumra's Profile
               </Link>
               <Link
                 to="/team/khalid"
