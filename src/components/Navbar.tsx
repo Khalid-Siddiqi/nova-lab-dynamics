@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { id: "home", label: "Home" },
-  { id: "ongoing", label: "Active Collaborations" },
+  { id: "ongoing", label: "Research Projects" },
   { id: "approach", label: "Approach" },
   { id: "research", label: "Latest Research" },
   { id: "team", label: "Team" },

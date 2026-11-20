@@ -137,7 +137,7 @@ function RaufProfile() {
                   <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-royal via-electric to-cyan-soft opacity-60 blur-xl transition group-hover:opacity-100 animate-gradient-pan" />
                   <div className="relative h-64 w-64 overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-deep to-royal shadow-elevate md:h-72 md:w-72">
                     <img
-                      src="/images/Dr_Rauf.avif"
+                      src="/images/Dr_Rauf_2026_profile.jpg"
                       alt="Dr. Rauf Ahmed Shams Malick"
                       className="h-full w-full object-cover"
                     />

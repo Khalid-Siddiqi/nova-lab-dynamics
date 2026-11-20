@@ -2,6 +2,24 @@ import { Mail, MapPin, Send } from "lucide-react";
 import { Reveal } from "../Reveal";
 import { MagneticButton } from "../MagneticButton";
 
+export const CONTACT_EMAIL = "khalid.siddiqui@agu.edu.pk";
+
+// No backend: open the visitor's email client with the form filled in.
+function sendViaEmail(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const data = new FormData(e.currentTarget);
+  const field = (name: string) => String(data.get(name) ?? "").trim();
+  const subject = field("topic") || "Enquiry for the Medical AI Lab";
+  const body = [
+    field("message"),
+    "",
+    `Name: ${field("name")}`,
+    `Affiliation: ${field("affiliation")}`,
+    `Email: ${field("email")}`,
+  ].join("\n");
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function Contact() {
   return (
     <section id="contact" className="relative overflow-hidden bg-hero py-28 text-white">
@@ -28,15 +46,18 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={220} className="mt-10 space-y-4">
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur transition hover:border-cyan-soft/60 hover:bg-white/10"
+            >
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-cta shadow-glow">
                 <Mail size={18} />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-white/60">Email</div>
-                <div className="text-sm font-semibold">medical.ai.lab@gutech.edu.pk</div>
+                <div className="text-sm font-semibold">{CONTACT_EMAIL}</div>
               </div>
-            </div>
+            </a>
             <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-cta shadow-glow">
                 <MapPin size={18} />
@@ -51,20 +72,21 @@ export function Contact() {
 
         <Reveal delay={120}>
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={sendViaEmail}
             className="relative rounded-3xl border border-white/10 bg-white/[0.06] p-8 backdrop-blur-xl"
           >
             <div className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-br from-electric/0 via-electric/30 to-cyan-soft/0 opacity-60 blur-md" />
             <div className="relative space-y-5">
               <div className="grid grid-cols-2 gap-4">
-                <Field label="Name" placeholder="Dr. Jane Doe" />
-                <Field label="Affiliation" placeholder="Institution" />
+                <Field label="Name" name="name" placeholder="Dr. Jane Doe" />
+                <Field label="Affiliation" name="affiliation" placeholder="Institution" />
               </div>
-              <Field label="Email" placeholder="you@university.edu" type="email" />
-              <Field label="Topic" placeholder="Collaboration, research interest..." />
+              <Field label="Email" name="email" placeholder="you@university.edu" type="email" />
+              <Field label="Topic" name="topic" placeholder="Collaboration, research interest..." />
               <div>
                 <label className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Message</label>
                 <textarea
+                  name="message"
                   rows={5}
                   placeholder="Tell us about your project or area of interest..."
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-electric focus:bg-white/10"

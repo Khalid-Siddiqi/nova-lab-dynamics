@@ -12,17 +12,17 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const Route = createFileRoute("/team/sumra")({
   head: () => ({
     meta: [
-      { title: "Ms. Sumra Khan — Faculty Researcher | MAL | GUTECH" },
+      { title: "Ms. Sumra Khan — Senior Lecturer | MAL | GUTECH" },
       {
         name: "description",
         content:
-          "Ms. Sumra Khan, Department of Computer Science at GUTECH, is a Medical AI Lab researcher working on responsible and explainable AI for medical imaging, deep learning, and healthcare informatics.",
+          "Ms. Sumra Khan, Senior Lecturer in Computer Science at GUTECH, is a Medical AI Lab researcher working on responsible and explainable AI for medical imaging, deep learning, and healthcare informatics.",
       },
       { property: "og:title", content: "Ms. Sumra Khan — Medical AI Lab" },
       {
         property: "og:description",
         content:
-          "Faculty Researcher at MAL, GUTECH. Research in Responsible AI, Explainable AI for medical imaging, NLP, deep learning, and density-based clustering.",
+          "Senior Lecturer at GUTECH and member of MAL. Research in Responsible AI, Explainable AI for medical imaging, NLP, deep learning, and density-based clustering.",
       },
     ],
     links: [
@@ -146,7 +146,7 @@ function SumraProfile() {
             <div>
               <Reveal>
                 <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-electric">
-                  Faculty Researcher
+                  Senior Lecturer
                 </div>
               </Reveal>
               <Reveal delay={80}>
@@ -156,10 +156,10 @@ function SumraProfile() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="mt-4 text-lg font-semibold text-royal">
-                  Faculty Researcher, Medical AI Lab (MAL)
+                  Researcher, Medical AI Lab (MAL)
                 </p>
                 <p className="mt-1 text-base text-muted-foreground">
-                  Department of Computer Science, GUTECH — Al Ghazali University
+                  Senior Lecturer, Department of Computer Science, GUTECH — Al Ghazali University
                 </p>
               </Reveal>
             </div>
@@ -232,7 +232,8 @@ function SumraProfile() {
                 <p>
                   Ms. Sumra Khan is a computer scientist and educator whose research centres on machine
                   learning and deep learning for healthcare. She joined the Department of Computer Science
-                  at GUTECH — Al Ghazali University in September 2026 and is a member of the Medical AI
+                  at GUTECH — Al Ghazali University as a Senior Lecturer in September 2026 and is a
+                  member of the Medical AI
                   Lab (MAL), where her work on responsible and explainable AI complements the lab's
                   clinician-centred research.
                 </p>

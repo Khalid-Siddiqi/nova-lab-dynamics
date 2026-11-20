@@ -102,7 +102,7 @@ function KhalidProfile() {
                   <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-royal via-electric to-cyan-soft opacity-60 blur-xl transition group-hover:opacity-100 animate-gradient-pan" />
                   <div className="relative h-64 w-64 overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-deep to-royal shadow-elevate md:h-72 md:w-72">
                     <img
-                      src="/images/Khalid_Khurshid_Siddiqui.jpg"
+                      src="/images/Khalid_2026_profile.jpg"
                       alt="Khalid Khurshid Siddiqui"
                       className="h-full w-full object-cover"
                     />
@@ -125,11 +125,11 @@ function KhalidProfile() {
                 LinkedIn
               </a>
               <a
-                href="mailto:khalid20031016@gmail.com"
+                href="mailto:khalid.siddiqui@agu.edu.pk"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5 hover:text-electric"
               >
                 <Mail size={16} />
-                khalid20031016@gmail.com
+                khalid.siddiqui@agu.edu.pk
               </a>
             </div>
           </Reveal>
