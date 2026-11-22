@@ -46,7 +46,6 @@ const collabs = [
     code: "ANA",
     icon: Microscope,
     title: "ANA Immunofluorescence Pattern Recognition",
-    lead: "Dr. Muhammad Shahzad",
     collaborator: "the Immunology Department, Indus Hospital & Health Network",
     tagline: "Computer-assisted reading of HEp-2 cell patterns, built as a second opinion for the laboratory.",
     accent: "from-royal to-cyan-soft",
@@ -130,12 +129,7 @@ export function Collaborations() {
                             {c.title}
                           </h3>
                           <p className="mt-2 text-sm text-muted-foreground">
-                            {c.lead && (
-                              <>
-                                Led by <span className="font-semibold text-foreground">{c.lead}</span>,{" "}
-                              </>
-                            )}
-                            {c.lead ? "in" : "In"} collaboration with clinicians at{" "}
+                            In collaboration with clinicians at{" "}
                             <span className="font-semibold text-royal">{c.collaborator}</span>
                           </p>
                           <p className="mt-3 text-base italic leading-relaxed text-foreground/80">
