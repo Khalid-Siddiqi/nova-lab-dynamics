@@ -1,0 +1,12 @@
+// Cloudflare Worker that serves the prerendered static site (no server code).
+// Build: `npm run build` (static mode is switched on automatically on Cloudflare).
+// Deploy: `npx wrangler deploy`.
+{
+  "name": "medical-ai-lab-gutech",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist/client",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none",
+  },
+}

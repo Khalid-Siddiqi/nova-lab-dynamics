@@ -4,9 +4,10 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 
-// STATIC=1 builds a fully static site (every page prerendered to HTML in
-// dist/client) for static hosts such as Cloudflare Pages, Netlify or GitHub Pages.
-const isStatic = process.env.STATIC === "1";
+// Build a fully static site (every page prerendered to HTML in dist/client)
+// with STATIC=1, and always on Cloudflare: Workers Builds sets WORKERS_CI=1 and
+// Pages sets CF_PAGES=1. Other static hosts (Netlify, GitHub Pages) need STATIC=1.
+const isStatic = ["STATIC", "WORKERS_CI", "CF_PAGES"].some((v) => process.env[v] === "1");
 
 export default defineConfig(({ command }) => ({
   plugins: [
