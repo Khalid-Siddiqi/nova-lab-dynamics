@@ -185,7 +185,7 @@ function ShahzadProfile() {
                   <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-royal via-electric to-cyan-soft opacity-60 blur-xl transition group-hover:opacity-100 animate-gradient-pan" />
                   <div className="relative h-64 w-64 overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy-deep to-royal shadow-elevate md:h-72 md:w-72">
                     <img
-                      src="/images/Dr_Shahzad.jpg"
+                      src="/images/Dr_Shahzad_profile.jpg"
                       alt="Dr. Muhammad Shahzad"
                       className="h-full w-full object-cover"
                     />

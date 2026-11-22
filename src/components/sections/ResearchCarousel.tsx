@@ -29,30 +29,12 @@ const slides = [
     caption: "Instance Segmentation of Tumour,Edema and necrotic tissue of Brain Scan in collaboration with AKU",
   },
   {
-    src: "/carousoul/ANA_portal.jpg",
-    alt: "ANA / LAB portal classifying HEp-2 cells",
+    src: "/carousoul/ANA_patterns.jpg",
+    alt: "Four held-out HEp-2 cells classified as Homogeneous, Speckled, Nucleolar and Centromere",
     caption:
-      "ANA Pattern Recognition with Indus Hospital's Immunology Department: the ANA / LAB portal classifying held-out HEp-2 cells with a Swin-Tiny vision transformer",
-  },
-  {
-    src: "/carousoul/ANA_homogeneous.jpg",
-    alt: "HEp-2 cell classified as Homogeneous",
-    caption: "ANA classification · Homogeneous (ICAP AC-1), predicted with >99.9% confidence on a held-out HEp-2 cell",
-  },
-  {
-    src: "/carousoul/ANA_speckled.jpg",
-    alt: "HEp-2 cell classified as Speckled",
-    caption: "ANA classification · Speckled (ICAP AC-4, 5), predicted with >99.9% confidence on a held-out HEp-2 cell",
-  },
-  {
-    src: "/carousoul/ANA_nucleolar.jpg",
-    alt: "HEp-2 cell classified as Nucleolar",
-    caption: "ANA classification · Nucleolar (ICAP AC-8 to 10), predicted with 99.9% confidence on a held-out HEp-2 cell",
-  },
-  {
-    src: "/carousoul/ANA_centromere.jpg",
-    alt: "HEp-2 cell classified as Centromere",
-    caption: "ANA classification · Centromere (ICAP AC-3), predicted with >99.9% confidence on a held-out HEp-2 cell",
+      "ANA Pattern Recognition with Indus Hospital's Immunology Department: held-out HEp-2 cells named by a Swin-Tiny vision transformer",
+    // The image fills the slide edge to edge, so show the caption below it instead of over it.
+    compactCaption: true,
   },
 ];
 
@@ -119,22 +101,35 @@ export function ResearchCarousel() {
                     className="relative min-w-0 shrink-0 grow-0 basis-full"
                   >
                     {/* 1. Aspect ratio gives images more vertical room */}
-                    <div className="relative flex aspect-[4/3] md:aspect-[16/9] w-full items-center justify-center overflow-hidden">
-                      
+                    <div
+                      className={cn(
+                        "relative flex aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden",
+                        slide.compactCaption ? "flex-col" : "items-center justify-center"
+                      )}
+                    >
+
                       <img
                         src={slide.src}
                         alt={slide.alt}
                         // 2. Conditional styling: First image gets cover + top focus, others get contain
                         className={cn(
-                          "h-full w-full transition duration-1000",
-                          i === 0 
-                            ? "object-cover object-top scale-90 md:scale-100" 
+                          "w-full transition duration-1000",
+                          slide.compactCaption ? "min-h-0 flex-1" : "h-full",
+                          i === 0
+                            ? "object-cover object-top scale-90 md:scale-100"
                             : "object-contain object-center"
-                        )} 
+                        )}
                       />
 
-                      {/* Only render the gradient and text if a caption exists */}
-                      {slide.caption && (
+                      {/* Caption below the image: the image keeps the rest of the slide */}
+                      {slide.caption && slide.compactCaption && (
+                        <div className="shrink-0 px-6 pb-5 pt-2 md:px-10 md:pb-8">
+                          <p className="font-display text-base font-bold leading-snug text-slate-900 md:text-xl max-w-4xl">
+                            {slide.caption}
+                          </p>
+                        </div>
+                      )}
+                      {slide.caption && !slide.compactCaption && (
                         <>
                           {/* Glass overlay at bottom */}
                           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/95 via-white/40 to-transparent" />

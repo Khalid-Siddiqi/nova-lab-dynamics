@@ -4,6 +4,10 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 
+// STATIC=1 builds a fully static site (every page prerendered to HTML in
+// dist/client) for static hosts such as Cloudflare Pages, Netlify or GitHub Pages.
+const isStatic = process.env.STATIC === "1";
+
 export default defineConfig(({ command }) => ({
   plugins: [
     tailwindcss(),
@@ -18,11 +22,12 @@ export default defineConfig(({ command }) => ({
           specifiers: ["server-only"],
         },
       },
+      ...(isStatic && { prerender: { enabled: true, crawlLinks: true, failOnError: true } }),
     }),
     viteReact(),
     // Production server build. Nitro detects Vercel when building there and
     // falls back to a plain Node server locally.
-    command === "build" && nitro(),
+    command === "build" && !isStatic && nitro(),
   ],
   // Use Lightning CSS in dev as well as build, so the dev preview matches the built CSS.
   css: { transformer: "lightningcss" },

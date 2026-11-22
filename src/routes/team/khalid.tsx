@@ -16,13 +16,13 @@ export const Route = createFileRoute("/team/khalid")({
       {
         name: "description",
         content:
-          "Khalid Khurshid Siddiqui is a Research Assistant at the Medical AI Lab, GUTECH. Focused on Medical AI, Computer Vision, MLOps, and DFU prognosis.",
+          "Khalid Khurshid Siddiqui is a Lab Instructor in Computer Science at GUTECH and a Research Assistant at the Medical AI Lab. Focused on Medical AI, Computer Vision, MLOps, and DFU prognosis.",
       },
       { property: "og:title", content: "Khalid Khurshid Siddiqui — Medical AI Lab" },
       {
         property: "og:description",
         content:
-          "Research Assistant at MAL, GUTECH. Specializing in Medical AI, Computer Vision, MLOps, and Diabetic Foot Ulcer prognosis.",
+          "Lab Instructor at GUTECH and Research Assistant at MAL. Specializing in Medical AI, Computer Vision, MLOps, and Diabetic Foot Ulcer prognosis.",
       },
     ],
     links: [
@@ -87,7 +87,10 @@ function KhalidProfile() {
               </Reveal>
               <Reveal delay={160}>
                 <p className="mt-4 text-lg font-semibold text-royal">
-                  Research Assistant &mdash; Medical AI
+                  Research Assistant, Medical AI Lab (MAL)
+                </p>
+                <p className="mt-1 text-base text-muted-foreground">
+                  Lab Instructor, Department of Computer Science, GUTECH &mdash; Al Ghazali University
                 </p>
                 <p className="mt-1 text-base text-muted-foreground">
                   BS Computer Science, FAST NUCES (2025)
