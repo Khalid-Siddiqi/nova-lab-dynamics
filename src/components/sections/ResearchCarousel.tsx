@@ -14,7 +14,7 @@ const slides = [
     caption: "MoU Signing b/w GU TECH, AL Ghazali University & Indus Hospital & Health Network (IHHN): Advancing AI in Healthcare", 
   },
   {
-    src: "/carousoul/DFU_Classificatio.png",
+    src: "/carousoul/DFU_Classification.jpg",
     alt: "DFU Classification",
     caption: "Instance Segmentation & Wagner Meir Classifying DFU severity grades",
   },

@@ -64,7 +64,7 @@ export function Navbar() {
           {/* INCREASED LOGO SIZE: h-14 w-14 */}
           <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full shadow-glow transition duration-300 group-hover:shadow-elevate">
             <img
-              src="/images/logo.png"
+              src="/images/logo_256.png"
               alt="Medical AI Lab Logo"
               className="h-full w-full object-cover"
             />

@@ -10,30 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TeamSumraRouteImport } from './routes/team/sumra'
-import { Route as TeamShahzadRouteImport } from './routes/team/shahzad'
-import { Route as TeamRaufRouteImport } from './routes/team/rauf'
-import { Route as TeamKhalidRouteImport } from './routes/team/khalid'
 import { Route as PublicationsHealthcareRouteImport } from './routes/publications/healthcare'
+import { Route as TeamKhalidRouteImport } from './routes/team/khalid'
+import { Route as TeamRaufRouteImport } from './routes/team/rauf'
+import { Route as TeamShahzadRouteImport } from './routes/team/shahzad'
+import { Route as TeamSumraRouteImport } from './routes/team/sumra'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamSumraRoute = TeamSumraRouteImport.update({
-  id: '/team/sumra',
-  path: '/team/sumra',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TeamShahzadRoute = TeamShahzadRouteImport.update({
-  id: '/team/shahzad',
-  path: '/team/shahzad',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TeamRaufRoute = TeamRaufRouteImport.update({
-  id: '/team/rauf',
-  path: '/team/rauf',
+const PublicationsHealthcareRoute = PublicationsHealthcareRouteImport.update({
+  id: '/publications/healthcare',
+  path: '/publications/healthcare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamKhalidRoute = TeamKhalidRouteImport.update({
@@ -41,9 +31,19 @@ const TeamKhalidRoute = TeamKhalidRouteImport.update({
   path: '/team/khalid',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublicationsHealthcareRoute = PublicationsHealthcareRouteImport.update({
-  id: '/publications/healthcare',
-  path: '/publications/healthcare',
+const TeamRaufRoute = TeamRaufRouteImport.update({
+  id: '/team/rauf',
+  path: '/team/rauf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamShahzadRoute = TeamShahzadRouteImport.update({
+  id: '/team/shahzad',
+  path: '/team/shahzad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamSumraRoute = TeamSumraRouteImport.update({
+  id: '/team/sumra',
+  path: '/team/sumra',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -117,25 +117,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/sumra': {
-      id: '/team/sumra'
-      path: '/team/sumra'
-      fullPath: '/team/sumra'
-      preLoaderRoute: typeof TeamSumraRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/team/shahzad': {
-      id: '/team/shahzad'
-      path: '/team/shahzad'
-      fullPath: '/team/shahzad'
-      preLoaderRoute: typeof TeamShahzadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/team/rauf': {
-      id: '/team/rauf'
-      path: '/team/rauf'
-      fullPath: '/team/rauf'
-      preLoaderRoute: typeof TeamRaufRouteImport
+    '/publications/healthcare': {
+      id: '/publications/healthcare'
+      path: '/publications/healthcare'
+      fullPath: '/publications/healthcare'
+      preLoaderRoute: typeof PublicationsHealthcareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team/khalid': {
@@ -145,11 +131,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamKhalidRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/publications/healthcare': {
-      id: '/publications/healthcare'
-      path: '/publications/healthcare'
-      fullPath: '/publications/healthcare'
-      preLoaderRoute: typeof PublicationsHealthcareRouteImport
+    '/team/rauf': {
+      id: '/team/rauf'
+      path: '/team/rauf'
+      fullPath: '/team/rauf'
+      preLoaderRoute: typeof TeamRaufRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/shahzad': {
+      id: '/team/shahzad'
+      path: '/team/shahzad'
+      fullPath: '/team/shahzad'
+      preLoaderRoute: typeof TeamShahzadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/sumra': {
+      id: '/team/sumra'
+      path: '/team/sumra'
+      fullPath: '/team/sumra'
+      preLoaderRoute: typeof TeamSumraRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

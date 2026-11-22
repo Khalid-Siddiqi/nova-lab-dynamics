@@ -2,8 +2,9 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
+import { nitro } from "nitro/vite";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     tailwindcss(),
     tanstackStart({
@@ -19,6 +20,9 @@ export default defineConfig({
       },
     }),
     viteReact(),
+    // Production server build. Nitro detects Vercel when building there and
+    // falls back to a plain Node server locally.
+    command === "build" && nitro(),
   ],
   // Use Lightning CSS in dev as well as build, so the dev preview matches the built CSS.
   css: { transformer: "lightningcss" },
@@ -43,4 +47,4 @@ export default defineConfig({
     ],
   },
   server: { host: "::", port: 8080 },
-});
+}));
