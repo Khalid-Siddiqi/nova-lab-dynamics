@@ -112,10 +112,19 @@ const publications: Publication[] = [
   // Cancer Drug Response
   {
     id: "DRPO-2024",
-    title: "DRPO: A Drug Repositioning Approach Based on Disease Module for Cancer Treatment",
-    authors: "Rauf Ahmed Shams Malick, et al.",
+    title: "DRPO: A Deep Learning Technique for Drug Response Prediction in Oncology Cell Lines",
+    authors: "Muhammad Shahzad, A. Z. U. A. Kadani, M. A. Tahir, Rauf Ahmed Shams Malick, R. Jiang",
     venue: "Alexandria Engineering Journal",
     year: 2024,
+    category: "Cancer Drug Response",
+    group: "leadership",
+  },
+  {
+    id: "xai-drug-sensitivity-2022",
+    title: "Explainable AI in Drug Sensitivity Prediction on Cancer Cell Lines",
+    authors: "I. S. Gillani, Muhammad Shahzad, A. Mobin, M. R. Munawar, M. U. Awan, M. Asif",
+    venue: "2022 International Conference on Emerging Trends in Smart Technologies (ICETST)",
+    year: 2022,
     category: "Cancer Drug Response",
     group: "leadership",
   },
@@ -264,10 +273,38 @@ const publications: Publication[] = [
     group: "leadership",
   },
   {
-    id: "neuPD-2024",
-    title: "NeuPD: A Novel Approach for Neurological Disorder Diagnosis Using Deep Learning",
-    authors: "Rauf Ahmed Shams Malick, et al.",
+    id: "neuPD-2023",
+    title: "NeuPD — A Neural Network-Based Approach to Predict Antineoplastic Drug Response",
+    authors: "Muhammad Shahzad, M. A. Tahir, M. Alhussein, A. Mobin, Rauf Ahmed Shams Malick, et al.",
     venue: "Diagnostics (MDPI)",
+    year: 2023,
+    category: "Cancer Drug Response",
+    group: "leadership",
+  },
+  {
+    id: "deepcms-2025",
+    title:
+      "DeepCMS: A Feature Selection-Driven Model for Cancer Molecular Subtyping with a Case Study on Testicular Germ Cell Tumors",
+    authors: "M. W. Khan, G. Ahmed, Muhammad Shahzad, A. Namoun, S. Hussain, M. H. Alanazi",
+    venue: "Diagnostics (MDPI)",
+    year: 2025,
+    category: "Bioinformatics",
+    group: "leadership",
+  },
+  {
+    id: "xai-biomarkers-2024",
+    title: "Identification of Biological Markers in Cancer Disease Using Explainable Artificial Intelligence",
+    authors: "Muhammad Shahzad, R. Lohana, K. Aurangzeb, I. I. Ali, M. S. Anwar, M. Murtaza, et al.",
+    venue: "International Journal of Imaging Systems and Technology",
+    year: 2024,
+    category: "Bioinformatics",
+    group: "leadership",
+  },
+  {
+    id: "actionable-mutations-2024",
+    title: "Classification of Clinically Actionable Genetic Mutations in Cancer Patients",
+    authors: "Muhammad Shahzad, M. Rafi, W. Alhalabi, N. Minaz Ali, M. S. Anwar, S. Jamal, et al.",
+    venue: "Frontiers in Molecular Biosciences",
     year: 2024,
     category: "Bioinformatics",
     group: "leadership",
@@ -675,6 +712,12 @@ function HealthcarePublications() {
                 className="inline-flex items-center gap-2 rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-elevate"
               >
                 Dr. Rauf's Profile
+              </Link>
+              <Link
+                to="/team/shahzad"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-electric hover:bg-electric/5"
+              >
+                Dr. Shahzad's Profile
               </Link>
               <Link
                 to="/team/sumra"

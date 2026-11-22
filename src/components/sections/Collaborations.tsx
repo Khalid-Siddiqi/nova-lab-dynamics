@@ -42,6 +42,27 @@ const collabs = [
       { icon: Users, label: "Scope", text: "Bridging the gap between computational feature extraction and neurosurgical planning." },
     ],
   },
+  {
+    code: "ANA",
+    icon: Microscope,
+    title: "ANA Immunofluorescence Pattern Recognition",
+    lead: "Dr. Muhammad Shahzad",
+    collaborator: "the Immunology Department, Indus Hospital & Health Network",
+    tagline: "Computer-assisted reading of HEp-2 cell patterns, built as a second opinion for the laboratory.",
+    accent: "from-royal to-cyan-soft",
+    focus: [
+      "Positive / negative screening of whole HEp-2 microscope fields with EfficientNet-B0 (92.8% sensitivity, 97.1% specificity)",
+      "Single-cell pattern naming with a Swin-Tiny vision transformer: homogeneous, speckled, nucleolar and centromere",
+      "96% of 8,403 held-out test cells named correctly (Cohen's κ 0.947), trained on 63,445 expert-labelled cells",
+      "Web portal that returns the pattern and a score for every pattern within seconds",
+    ],
+    impact: [
+      { icon: Target, label: "Goal", text: "Faster, consistent reading of the ANA test, the first screen for autoimmune diseases such as lupus." },
+      { icon: Microscope, label: "Approach", text: "Two-step deep learning: screen each field, then name the staining pattern of each cell." },
+      { icon: Users, label: "Scope", text: "Next: test on anonymised Indus slides with ethical approval and compare with the department's readings." },
+    ],
+    note: "Research use only: trained on public datasets (AIDA, Qi et al.) and not yet clinically validated; a trained reader keeps the final word.",
+  },
 ];
 
 const collaborators = [
@@ -65,7 +86,7 @@ export function Collaborations() {
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Two flagship projects led by the Medical AI Lab, developed in collaboration with clinical
+            Flagship projects led by the Medical AI Lab, developed in collaboration with clinical
             experts so that our models are shaped by real clinical needs and can grow into bedside
             decision-support tools.
           </p>
@@ -109,7 +130,12 @@ export function Collaborations() {
                             {c.title}
                           </h3>
                           <p className="mt-2 text-sm text-muted-foreground">
-                            In collaboration with clinicians at{" "}
+                            {c.lead && (
+                              <>
+                                Led by <span className="font-semibold text-foreground">{c.lead}</span>,{" "}
+                              </>
+                            )}
+                            {c.lead ? "in" : "In"} collaboration with clinicians at{" "}
                             <span className="font-semibold text-royal">{c.collaborator}</span>
                           </p>
                           <p className="mt-3 text-base italic leading-relaxed text-foreground/80">
@@ -146,6 +172,12 @@ export function Collaborations() {
                           ))}
                         </ul>
                       </div>
+
+                      {c.note && (
+                        <p className="mt-8 border-t border-border pt-5 text-xs font-medium leading-relaxed text-foreground/80">
+                          {c.note}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </TiltCard>

@@ -60,16 +60,16 @@ const publications = [
     authors: "Rauf Ahmed Shams Malick, et al.",
   },
   {
-    title: "DRPO: A Drug Repositioning Approach Based on Disease Module",
+    title: "DRPO: A Deep Learning Technique for Drug Response Prediction in Oncology Cell Lines",
     venue: "Alexandria Engineering Journal",
     year: 2024,
-    authors: "Rauf Ahmed Shams Malick, et al.",
+    authors: "Muhammad Shahzad, A. Z. U. A. Kadani, M. A. Tahir, Rauf Ahmed Shams Malick, R. Jiang",
   },
   {
-    title: "NeuPD: A Novel Approach for Neurological Disorder Diagnosis Using Deep Learning",
+    title: "NeuPD — A Neural Network-Based Approach to Predict Antineoplastic Drug Response",
     venue: "Diagnostics (MDPI)",
-    year: 2024,
-    authors: "Rauf Ahmed Shams Malick, et al.",
+    year: 2023,
+    authors: "Muhammad Shahzad, M. A. Tahir, M. Alhussein, A. Mobin, Rauf Ahmed Shams Malick, et al.",
   },
   {
     title: "DbKB: A Diabetes Knowledge Base for Explainable AI in Healthcare",

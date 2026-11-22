@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TeamSumraRouteImport } from './routes/team/sumra'
+import { Route as TeamShahzadRouteImport } from './routes/team/shahzad'
 import { Route as TeamRaufRouteImport } from './routes/team/rauf'
 import { Route as TeamKhalidRouteImport } from './routes/team/khalid'
 import { Route as PublicationsHealthcareRouteImport } from './routes/publications/healthcare'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const TeamSumraRoute = TeamSumraRouteImport.update({
   id: '/team/sumra',
   path: '/team/sumra',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamShahzadRoute = TeamShahzadRouteImport.update({
+  id: '/team/shahzad',
+  path: '/team/shahzad',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRaufRoute = TeamRaufRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/publications/healthcare': typeof PublicationsHealthcareRoute
   '/team/khalid': typeof TeamKhalidRoute
   '/team/rauf': typeof TeamRaufRoute
+  '/team/shahzad': typeof TeamShahzadRoute
   '/team/sumra': typeof TeamSumraRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/publications/healthcare': typeof PublicationsHealthcareRoute
   '/team/khalid': typeof TeamKhalidRoute
   '/team/rauf': typeof TeamRaufRoute
+  '/team/shahzad': typeof TeamShahzadRoute
   '/team/sumra': typeof TeamSumraRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/publications/healthcare': typeof PublicationsHealthcareRoute
   '/team/khalid': typeof TeamKhalidRoute
   '/team/rauf': typeof TeamRaufRoute
+  '/team/shahzad': typeof TeamShahzadRoute
   '/team/sumra': typeof TeamSumraRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/publications/healthcare'
     | '/team/khalid'
     | '/team/rauf'
+    | '/team/shahzad'
     | '/team/sumra'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/publications/healthcare'
     | '/team/khalid'
     | '/team/rauf'
+    | '/team/shahzad'
     | '/team/sumra'
   id:
     | '__root__'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/publications/healthcare'
     | '/team/khalid'
     | '/team/rauf'
+    | '/team/shahzad'
     | '/team/sumra'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   PublicationsHealthcareRoute: typeof PublicationsHealthcareRoute
   TeamKhalidRoute: typeof TeamKhalidRoute
   TeamRaufRoute: typeof TeamRaufRoute
+  TeamShahzadRoute: typeof TeamShahzadRoute
   TeamSumraRoute: typeof TeamSumraRoute
 }
 
@@ -109,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/team/sumra'
       fullPath: '/team/sumra'
       preLoaderRoute: typeof TeamSumraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/shahzad': {
+      id: '/team/shahzad'
+      path: '/team/shahzad'
+      fullPath: '/team/shahzad'
+      preLoaderRoute: typeof TeamShahzadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team/rauf': {
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   PublicationsHealthcareRoute: PublicationsHealthcareRoute,
   TeamKhalidRoute: TeamKhalidRoute,
   TeamRaufRoute: TeamRaufRoute,
+  TeamShahzadRoute: TeamShahzadRoute,
   TeamSumraRoute: TeamSumraRoute,
 }
 export const routeTree = rootRouteImport

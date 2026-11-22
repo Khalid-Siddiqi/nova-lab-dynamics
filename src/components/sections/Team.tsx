@@ -14,6 +14,15 @@ const team = [
     route: "/team/rauf",
   },
   {
+    name: "Dr. Muhammad Shahzad",
+    role: "Senior Researcher",
+    title: "Assistant Professor, Computer Science, GUTECH · Senior Researcher",
+    bio: "Leads MAL's ANA pattern-recognition project with Indus Hospital's Immunology Department; AI in medicine, cancer genomics and explainable AI.",
+    photo: "/images/Dr_Shahzad.jpg",
+    badge: "Senior Researcher",
+    route: "/team/shahzad",
+  },
+  {
     name: "Ms. Sumra Khan",
     role: "Senior Lecturer",
     title: "Senior Lecturer, Computer Science, GUTECH · Lab Member",
@@ -51,7 +60,7 @@ export function Team() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
           {team.map((p, i) => (
             <Reveal key={p.name} delay={i * 140}>
               <Link to={p.route} className="block">

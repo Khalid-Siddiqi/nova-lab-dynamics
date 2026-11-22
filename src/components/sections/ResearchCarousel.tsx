@@ -28,6 +28,32 @@ const slides = [
     alt: "Brain cancer segmentation",
     caption: "Instance Segmentation of Tumour,Edema and necrotic tissue of Brain Scan in collaboration with AKU",
   },
+  {
+    src: "/carousoul/ANA_portal.jpg",
+    alt: "ANA / LAB portal classifying HEp-2 cells",
+    caption:
+      "ANA Pattern Recognition with Indus Hospital's Immunology Department: the ANA / LAB portal classifying held-out HEp-2 cells with a Swin-Tiny vision transformer",
+  },
+  {
+    src: "/carousoul/ANA_homogeneous.jpg",
+    alt: "HEp-2 cell classified as Homogeneous",
+    caption: "ANA classification · Homogeneous (ICAP AC-1), predicted with >99.9% confidence on a held-out HEp-2 cell",
+  },
+  {
+    src: "/carousoul/ANA_speckled.jpg",
+    alt: "HEp-2 cell classified as Speckled",
+    caption: "ANA classification · Speckled (ICAP AC-4, 5), predicted with >99.9% confidence on a held-out HEp-2 cell",
+  },
+  {
+    src: "/carousoul/ANA_nucleolar.jpg",
+    alt: "HEp-2 cell classified as Nucleolar",
+    caption: "ANA classification · Nucleolar (ICAP AC-8 to 10), predicted with 99.9% confidence on a held-out HEp-2 cell",
+  },
+  {
+    src: "/carousoul/ANA_centromere.jpg",
+    alt: "HEp-2 cell classified as Centromere",
+    caption: "ANA classification · Centromere (ICAP AC-3), predicted with >99.9% confidence on a held-out HEp-2 cell",
+  },
 ];
 
 export function ResearchCarousel() {
