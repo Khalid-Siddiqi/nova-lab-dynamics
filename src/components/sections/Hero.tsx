@@ -25,7 +25,8 @@ export function Hero() {
     <section
       id="home"
       ref={wrapRef}
-      className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-hero animate-gradient-pan"
+      // pt-32 keeps the content clear of the fixed navbar (about 108px tall) on short phone screens
+      className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-hero animate-gradient-pan pt-32 pb-16"
     >
       {/* mouse light */}
       <div className="mouse-glow pointer-events-none absolute inset-0" />

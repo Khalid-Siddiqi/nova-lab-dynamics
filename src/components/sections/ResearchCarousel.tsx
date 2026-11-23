@@ -9,8 +9,6 @@ const slides = [
   {
     src: "/carousoul/Mou_with_Indus.jfif",
     alt: "MoU with Indus Hospital",
-    // You mentioned this image already has text on it. 
-    // You can leave this blank ("") if you don't want the black gradient caption overlay on this specific slide.
     caption: "MoU Signing b/w GU TECH, AL Ghazali University & Indus Hospital & Health Network (IHHN): Advancing AI in Healthcare", 
   },
   {
@@ -33,8 +31,6 @@ const slides = [
     alt: "Four held-out HEp-2 cells classified as Homogeneous, Speckled, Nucleolar and Centromere",
     caption:
       "ANA Pattern Recognition with Indus Hospital's Immunology Department: held-out HEp-2 cells named by a Swin-Tiny vision transformer",
-    // The image fills the slide edge to edge, so show the caption below it instead of over it.
-    compactCaption: true,
   },
 ];
 
@@ -100,49 +96,29 @@ export function ResearchCarousel() {
                     key={i}
                     className="relative min-w-0 shrink-0 grow-0 basis-full"
                   >
-                    {/* 1. Aspect ratio gives images more vertical room */}
-                    <div
-                      className={cn(
-                        "relative flex aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden",
-                        slide.compactCaption ? "flex-col" : "items-center justify-center"
-                      )}
-                    >
-
+                    {/* Image frame: the whole image stays visible, with no text on top of it */}
+                    <div className="relative flex aspect-[4/3] md:aspect-[16/9] w-full items-center justify-center overflow-hidden">
                       <img
                         src={slide.src}
                         alt={slide.alt}
-                        // 2. Conditional styling: First image gets cover + top focus, others get contain
+                        // The square MoU photo fills the wide frame from the top on larger screens
                         className={cn(
-                          "w-full transition duration-1000",
-                          slide.compactCaption ? "min-h-0 flex-1" : "h-full",
+                          "h-full w-full transition duration-1000",
                           i === 0
-                            ? "object-cover object-top scale-90 md:scale-100"
+                            ? "object-contain md:object-cover md:object-top"
                             : "object-contain object-center"
                         )}
                       />
-
-                      {/* Caption below the image: the image keeps the rest of the slide */}
-                      {slide.caption && slide.compactCaption && (
-                        <div className="shrink-0 px-6 pb-5 pt-2 md:px-10 md:pb-8">
-                          <p className="font-display text-base font-bold leading-snug text-slate-900 md:text-xl max-w-4xl">
-                            {slide.caption}
-                          </p>
-                        </div>
-                      )}
-                      {slide.caption && !slide.compactCaption && (
-                        <>
-                          {/* Glass overlay at bottom */}
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/95 via-white/40 to-transparent" />
-
-                          {/* Caption Text */}
-                          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                            <p className="font-display text-lg font-bold leading-relaxed text-slate-900 md:text-xl max-w-3xl drop-shadow-sm">
-                              {slide.caption}
-                            </p>
-                          </div>
-                        </>
-                      )}
                     </div>
+
+                    {/* Caption below the image */}
+                    {slide.caption && (
+                      <div className="border-t border-border px-6 py-5 md:px-10 md:py-6">
+                        <p className="max-w-4xl border-l-4 border-electric pl-4 font-display text-base font-semibold leading-snug text-royal md:text-xl">
+                          {slide.caption}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 ))}
             </div>
@@ -151,21 +127,29 @@ export function ResearchCarousel() {
           {/* Navigation arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-5 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-electric hover:bg-electric hover:text-white"
+            className="absolute -left-5 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-border bg-card md:grid text-foreground shadow-lg transition hover:border-electric hover:bg-electric hover:text-white"
             aria-label="Previous slide"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute -right-5 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-border bg-card text-foreground shadow-lg transition hover:border-electric hover:bg-electric hover:text-white"
+            className="absolute -right-5 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-border bg-card md:grid text-foreground shadow-lg transition hover:border-electric hover:bg-electric hover:text-white"
             aria-label="Next slide"
           >
             <ChevronRight size={20} />
           </button>
 
           {/* Interactive Dots */}
-          <div className="mt-8 flex justify-center gap-3">
+          <div className="mt-8 flex items-center justify-center gap-3">
+            {/* Phones: arrows sit beside the dots so they don't cover the image */}
+            <button
+              onClick={scrollPrev}
+              className="mr-2 grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground shadow transition hover:border-electric hover:bg-electric hover:text-white md:hidden"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={18} />
+            </button>
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -179,6 +163,13 @@ export function ResearchCarousel() {
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
+            <button
+              onClick={scrollNext}
+              className="ml-2 grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground shadow transition hover:border-electric hover:bg-electric hover:text-white md:hidden"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
         </div>
       </div>
